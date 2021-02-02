@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+header{
+    color: white;
+    font-family: sans-serif;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+    span{
+       font-family: 'Courier New', Courier, monospace;
+    }
+    .svg-div{
+        display: flex;
+        width: 200px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .nav-bell{
+        fill: white;
+        height: 30px;
+        border-right: solid black 1px;
+        padding-right: 1em;
+    }
+    img{
+        border-radius: 360px;
+        height: 30px; 
+    }
+}
+

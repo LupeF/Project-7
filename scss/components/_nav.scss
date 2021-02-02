@@ -1,0 +1,13 @@
+nav{
+    height: 70px;
+    background-color: rgb(59, 4, 87);
+    img{
+        height: 30px;
+    }
+    .flex-img{
+        padding-top: 1em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
