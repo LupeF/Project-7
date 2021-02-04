@@ -1,0 +1,29 @@
+
+
+
+.members-half{
+   border: solid 1px black;
+//    text-align: center;
+   .members-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    img{
+        height: 40px;
+        border-radius: 360px;
+    }
+    p{
+        align-self: center;
+        margin-left: auto;
+    }
+    .members-text{
+        width: 100%;
+        border-bottom: solid 1px black;
+        padding-left: 8px;
+        a {
+          text-decoration: none;
+          margin-bottom: 10px;  
+        }
+    }
+  } 
+}

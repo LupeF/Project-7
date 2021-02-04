@@ -1,2 +1,16 @@
 
- 
+ .traffic-header{
+     display: flex;
+     justify-content: space-between;
+     margin-top: 2em;
+     .traffic-nav{
+         display: flex;
+         justify-content: space-around;
+         list-style-type: none;
+         align-items: center;
+     }
+ }
+
+ .widget-container-full{
+    //  width: 200px;
+ }

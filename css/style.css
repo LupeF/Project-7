@@ -339,18 +339,20 @@ template {
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Arsenal", sans-serif;
+  font-family: "Hind", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 header {
   color: white;
-  font-family: sans-serif;
   padding: 1em;
   display: flex;
   justify-content: space-between;
-  background-color: blueviolet;
+  background-color: #514efa;
 }
 header span {
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
 }
 header .svg-div {
   display: flex;
@@ -371,7 +373,7 @@ header img {
 
 nav {
   height: 70px;
-  background-color: #3b0457;
+  background-color: #302e9e;
 }
 nav img {
   height: 30px;
@@ -383,31 +385,82 @@ nav .flex-img {
   align-items: center;
 }
 
-.main-header {
-  display: flex;
+.daily {
+  border: solid 1px black;
 }
 
-.main-header-search {
+.main-header {
+  display: flex;
+  justify-content: space-between;
+}
+.main-header .main-header-search {
   background-color: lightgray;
   border-left: solid 1px black;
   border-bottom: solid 1px black;
-  padding-left: 50px;
 }
 
-.main-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
+.social-logos {
+  height: 40px;
+  fill: white;
+}
+
+.social-image {
+  width: 60px;
+  border-radius: 10px;
+  background-color: #514efa;
+  max-width: 300px;
+  border: solid 1px black;
+}
+
+.social-container {
+  border: solid 1px black;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+  color: #514efa;
+}
+.social-container .social-text span {
+  color: black;
+  font-size: xx-large;
+}
+
+.traffic-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+.traffic-header .traffic-nav {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
   align-items: center;
 }
-.main-header .headline {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  color: #7f6cac;
+
+.members-half {
+  border: solid 1px black;
 }
-.main-header input {
-  border-radius: 5px;
-  height: 2.5em;
-  width: 14em;
-  margin-right: 1em;
+.members-half .members-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+}
+.members-half .members-container img {
+  height: 40px;
+  border-radius: 360px;
+}
+.members-half .members-container p {
+  align-self: center;
+  margin-left: auto;
+}
+.members-half .members-container .members-text {
+  width: 100%;
+  border-bottom: solid 1px black;
+  padding-left: 8px;
+}
+.members-half .members-container .members-text a {
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,16 +1,13 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-}
+
 header{
     color: white;
-    font-family: sans-serif;
     padding: 1em;
     display: flex;
     justify-content: space-between;
-    background-color: blueviolet;
+    background-color: #514efa;
+    
     span{
-       font-family: 'Courier New', Courier, monospace;
+       font-family: monospace;
     }
     .svg-div{
         display: flex;
