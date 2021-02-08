@@ -1,24 +1,35 @@
 
 
 
-.members-half{
-   border: solid 1px black;
-//    text-align: center;
+
+
+
+  section h3{
+    padding-left: 1em;
+  }
    .members-container{
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5em;
+    background-color: whitesmoke;
+    // margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: 50px 3fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding-left: 1em;
+    // margin-left: 1em;
     img{
         height: 40px;
         border-radius: 360px;
     }
     p{
-        align-self: center;
-        margin-left: auto;
+        // align-self: center;
+        margin: 0 auto;
+        
     }
     .members-text{
-        width: 100%;
+        // width: 100%;
         border-bottom: solid 1px black;
+        padding-bottom: 1em;
         padding-left: 8px;
         a {
           text-decoration: none;
@@ -26,4 +37,5 @@
         }
     }
   } 
-}
+  
+

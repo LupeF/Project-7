@@ -19,7 +19,7 @@ var chart = new Chart(ctx, {
                  '25-31'],
         datasets: [{
             label: 'My First dataset',
-            backgroundColor: '#c6c4f0',
+            backgroundColor: '#bdcddd',
             borderColor: 'rgb(255, 99, 132)',
             data: [{
                 x:100,
@@ -54,7 +54,7 @@ var chart = new Chart(ctx, {
         labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         datasets: [{
             label: 'My First dataset',
-            backgroundColor: ' #514efa',
+            backgroundColor: ' #bdcddd',
             borderColor: 'rgb(255, 99, 132)',
             data: [0, 10, 5, 2, 20, 30, 45]
         }]
@@ -76,7 +76,7 @@ var chart = new Chart(ctx, {
         labels: ['Phones', 'Tablets', 'Desktop',],
         datasets: [{
             label: 'My First dataset',
-            backgroundColor: ' #514efa',
+            backgroundColor: ' #bdcddd',
             borderColor: 'rgb(255, 99, 132)',
             data: [0, 10, 5, 2, 20, 30, 45]
         }]

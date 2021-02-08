@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web App Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="stylesheet" href="css/toggle-switch-rem.css">
     <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital@1&family=Hind:wght@300&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/toggle-switch-px.css">
 </head>
 <body> 
   <header>
@@ -138,10 +139,9 @@
             </div>
         </section>
 
-        <section class="members-half">
+        <section class="members-section">
             <h3>NEW MEMBERS</h3>
             <div class="members-container">
-                
                 <img src="images/member-1.jpg" alt="Picture of a new member" class="profile-image">
                 <div class="members-text">
                     <p>Victoria Chambers</p>
@@ -186,7 +186,7 @@
                     <p>Victoria Chambers commented on YourApp's Tips</p>
                     <p>4 hours ago</p>
                 </div>
-                <p> > </p>>
+                <p> > </p>
             </div>
 
             <div class="members-container">
@@ -195,7 +195,7 @@
                     <p>Dale Byrd like the post Facebook's Changes for 2016</p>
                     <p>5 hours ago</p>
                 </div>
-                <p> > </p>>
+                <p> > </p>
             </div>
             <div class="members-container">
                 <img src="images/member-3.jpg" alt="Pictue of a member" class="profile-image">
@@ -203,7 +203,7 @@
                     <p>Dawn Wood commented on Facebook's Changes for 2016</p>
                     <p>5 hours ago</p>
                 </div>
-                <p> > </p>>
+                <p> > </p>
             </div>
             <div class="members-container">
                 <img src="images/member-4.jpg" alt="Picture of a member" class="profile-image">
@@ -211,7 +211,7 @@
                     <p>Dan Oliver posted YourApp's SEO Tips</p>
                     <p>1 hours ago</p>
                 </div>
-                <p> > </p>>
+                <p> > </p>
             </div>
         </section>
 
@@ -224,13 +224,32 @@
             </form>
         </section>
 
-        <section>
+        <section class="message">
             <h3>SETTINGS</h3>
             <p>Send Email Notifications</p>
             <!-- custom CSS toggle code  -->
-            <p>Set Profile to Public</p>
+            <label class="switch-light switch-candy" onclick="">
+                <input type="checkbox">
+                <span>
+                  <span>Off</span>
+                  <span>On</span>
+                  <a></a>
+                </span>
+              </label>
+              
             
             <!-- custom CSS toggle code  -->
+            <p>Set Profile to Public</p>
+            <label class="switch-light switch-candy" onclick="">
+                <input type="checkbox" class="check">
+              
+                <span>
+                  <span>Off</span>
+                  <span>On</span>
+                  <a></a>
+                </span>
+              </label>
+            
             <select class="form-field" id="timezone">
                 <option disabled selected>Select Timezone</option>
                 <option>Western</option>

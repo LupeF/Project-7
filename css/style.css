@@ -338,7 +338,6 @@ template {
 
 * {
   box-sizing: border-box;
-  margin: 0;
   font-family: "Arsenal", sans-serif;
   font-family: "Hind", sans-serif;
   font-family: "Noto Sans KR", sans-serif;
@@ -346,7 +345,7 @@ template {
 
 header {
   color: white;
-  padding: 1em;
+  padding: 0.8em;
   display: flex;
   justify-content: space-between;
   background-color: #514efa;
@@ -375,6 +374,9 @@ nav {
   height: 70px;
   background-color: #302e9e;
 }
+nav a {
+  color: white;
+}
 nav img {
   height: 30px;
 }
@@ -390,13 +392,13 @@ nav .flex-img {
 }
 
 .main-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 150px 4fr;
 }
 .main-header .main-header-search {
-  background-color: lightgray;
-  border-left: solid 1px black;
-  border-bottom: solid 1px black;
+  align-self: center;
+  margin-left: auto;
+  padding-right: 1em;
 }
 
 .social-logos {
@@ -406,23 +408,30 @@ nav .flex-img {
 
 .social-image {
   width: 60px;
+  height: 60px;
   border-radius: 10px;
   background-color: #514efa;
-  max-width: 300px;
-  border: solid 1px black;
 }
 
 .social-container {
-  border: solid 1px black;
-  width: 100%;
+  background-color: whitesmoke;
+  margin-bottom: 1em;
   padding: 1em;
-  display: flex;
+  transform-origin: 50% 50%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 70px 4fr;
+  justify-content: center;
+  align-items: center;
   justify-content: space-around;
   color: #514efa;
 }
+.social-container .social-text {
+  margin-left: 2.5em;
+}
 .social-container .social-text span {
   color: black;
-  font-size: xx-large;
+  font-size: larger;
 }
 
 .traffic-header {
@@ -437,30 +446,83 @@ nav .flex-img {
   align-items: center;
 }
 
-.members-half {
-  border: solid 1px black;
+section h3 {
+  padding-left: 1em;
 }
-.members-half .members-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5em;
+
+.members-container {
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: 50px 3fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  padding-left: 1em;
 }
-.members-half .members-container img {
+.members-container img {
   height: 40px;
   border-radius: 360px;
 }
-.members-half .members-container p {
-  align-self: center;
-  margin-left: auto;
+.members-container p {
+  margin: 0 auto;
 }
-.members-half .members-container .members-text {
-  width: 100%;
+.members-container .members-text {
   border-bottom: solid 1px black;
+  padding-bottom: 1em;
   padding-left: 8px;
 }
-.members-half .members-container .members-text a {
+.members-container .members-text a {
   text-decoration: none;
   margin-bottom: 10px;
+}
+
+.message {
+  background-color: whitesmoke;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.message input {
+  height: 3em;
+}
+.message .widget-container {
+  display: flex;
+  flex-direction: column;
+}
+.message .widget-container .form-field {
+  height: 100px;
+  margin: 1em 0 1em;
+}
+.message .widget-container .button-primary {
+  height: 3em;
+  color: white;
+  background-color: #302e9e;
+  margin-bottom: 1em;
+}
+.message .form-field {
+  width: 100%;
+  height: 3em;
+  margin-top: 1em;
+}
+.message .switch-light {
+  width: 50%;
+}
+.message .settings-button {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+.message .settings-button .button-primary {
+  height: 3em;
+  width: 45%;
+  color: white;
+  background-color: #302e9e;
+  margin-bottom: 1em;
+}
+.message .settings-button .button-disabled {
+  height: 3em;
+  width: 45%;
+  color: white;
+  background-color: #bbbbbb;
 }
 
 /*# sourceMappingURL=style.css.map */

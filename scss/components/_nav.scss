@@ -1,13 +1,17 @@
 nav{
     height: 70px;
     background-color:  #302e9e;
+    a{
+      color: white;  
+    }
     img{
         height: 30px;
+
     }
     .flex-img{
         padding-top: 1em;
         display: flex;
         justify-content: space-around;
-        align-items: center;   
+        align-items: center;
     }
 }
