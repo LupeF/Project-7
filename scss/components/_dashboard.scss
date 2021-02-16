@@ -1,16 +1,16 @@
 .main-header{
     display: grid;
-    grid-template-columns: 150px 4fr;
-    
-    // justify-content: space-between;
-    
-    .main-header-search{
-        align-self: center;
+    grid-template-columns: 180px auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1em;
+    .main-header-search input{
+           border-radius: 5px;
+        // align-self: center;
         // border-left: solid 1px black;
         // border-bottom: solid 1px black;
-        margin-left:   auto; 
-        padding-right: 1em;
-
+        // margin-left:   auto; 
+        // padding-right: 1em;
     }
 
 }

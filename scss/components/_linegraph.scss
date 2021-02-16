@@ -1,11 +1,13 @@
 
  .traffic-header{
-     display: flex;
-     justify-content: space-between;
+     display: grid;
+     grid-template-columns: 150px 2fr;
      margin-top: 2em;
+     grid-area: main
+     ;
      .traffic-nav{
          display: flex;
-         justify-content: space-around;
+         justify-content: space-evenly;
          list-style-type: none;
          align-items: center;
      }
