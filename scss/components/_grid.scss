@@ -16,21 +16,7 @@ canvas{
         "header header"
         "nav main";
     }
-    // .main{
-    //     display: grid;
-    //     @media(min-width:768px){
-    //         grid-template-columns:50%;
-    //         .traffic, .social, .dash {
-    //             grid-column: 1 / span 2;
-    //         }
-    //         .daily, .message,.members {
-    //             grid-column: 1 / span 1;
-    //         }
-    //         .activity, .settings, .mobile{
-    //             grid-column: 2 / span 1;
-    //         }
-    //     }
-    // }  
+   
     .main{
         display: grid;
         @media(min-width: 768px){
@@ -52,14 +38,14 @@ canvas{
     }
 }
 
-// .widget-container-full, .widget-container-half {
-//     width: 95vw;
-//     @media(min-width: 768px){
-//         .widget-container-full{
-//             width: 90vw;
-//         }
-//         .widget-container-half{
-//             width: 45vw;
-//         }
-//     }
-// }
+.widget-container-full, .widget-container-half {
+    width: 95vw;
+    @media(min-width: 768px){
+        .widget-container-full{
+            width: 90vw;
+        }
+        .widget-container-half{
+            width: 45vw;
+        }
+    }
+}
