@@ -1,16 +1,17 @@
 .social-container{
     background-color: whitesmoke;
-    border-radius: 20px;
+    border: solid 1px black;
+    border-radius: 10px;
     color: #514efa;
-    margin-bottom: 1em;
-    padding: 1em;
-    text-align:center;
+    margin: 1em;
     display: grid;
     grid-template-columns: 200px 200px;
-    grid-area: main;
-    justify-content: center;
+    padding: 0 2em;
     align-items: center;
-    justify-content: center;
+    @media(min-width:768px){
+        display: flex;
+        justify-content: center;
+    }
     .social-image{
         display: flex;
         justify-content: center;
@@ -30,10 +31,27 @@
         }  
     }
     .social-text{
-        margin-left: 2.5em;
+        margin-left: 1.5em;
         span{
             color: black; 
             font-size: x-large; 
+        }
+    }
+}
+.social{
+    @media(min-width:768px){
+        display: grid;
+        // grid-template-columns: 2fr 2fr 2fr;
+        grid-template-columns: repeat(auto-fit,minmax(200px, 2fr));
+        grid-template-rows: 50px 120px;
+        .twitter {
+            grid-column: 1 / span 1;
+        }
+        .facebook{
+            grid-column: 2 / 3;
+        }
+        .google{
+            grid-column: 3 / 4;
         }
     }
 }

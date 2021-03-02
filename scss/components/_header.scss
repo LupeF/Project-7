@@ -2,10 +2,12 @@
 header{
     color: white;
     padding: .8em;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     justify-content: space-between;
     background-color: #514efa;
     grid-area: header;
+
     span{
        font-family: monospace;
     }
@@ -25,5 +27,5 @@ header{
         border-radius: 360px;
         height: 30px; 
     }
-}
 
+}

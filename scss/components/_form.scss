@@ -1,7 +1,12 @@
-.message{
+.message,.settings{
     background-color: whitesmoke;
     padding: 1em;
-    margin-bottom: 1em;
+    margin: 1em;
+    border: solid 1px black;
+    border-radius: 5px;
+    @media(min-width:768px){
+        margin: 0;
+    }
     input{
         height: 3em;
     }

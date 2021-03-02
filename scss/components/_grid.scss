@@ -2,9 +2,11 @@ canvas{
     max-width: 100%;
 }
 
+
+
 .grid-container{
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
     "header"
@@ -15,7 +17,11 @@ canvas{
         grid-template-areas: 
         "header header"
         "nav main";
+        nav{
+            height: 100%;
+        }
     }
+    
    
     .main{
         display: grid;
@@ -27,19 +33,19 @@ canvas{
             }
              .daily, .members, .message{
                 grid-column: 1/ span 1;
+                
             }
             
             .mobile, .activity, .settings{
                 grid-column: 2 / span 1;
             }
-            
-    
         }
     }
 }
-
+//Responsive to screen resizing
 .widget-container-full, .widget-container-half {
     width: 95vw;
+}
     @media(min-width: 768px){
         .widget-container-full{
             width: 90vw;
@@ -48,4 +54,3 @@ canvas{
             width: 45vw;
         }
     }
-}
