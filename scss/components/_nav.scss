@@ -2,12 +2,16 @@ nav{
     height: 70px;
     background-color:  #302e9e;
     grid-area: nav;
-    a{
-      color: white;  
+    color: white;
+    a {
+      color: white;
+      &:hover{
+          color: lime;   //? not sure why it's not adding color//
+          border-bottom: solid 5px lime;  //* works on border*//
+      }
     }
     img{
         height: 30px;
-
     }
     .flex-img{
         padding-top: 1em;

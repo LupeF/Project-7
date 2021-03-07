@@ -1,31 +1,53 @@
 
 header{
     color: white;
-    padding: .8em;
+    padding: .5em;
     display: grid;
     grid-template-columns: 1fr auto auto;
     justify-content: space-between;
-    background-color: #514efa;
+    background-color: #7477bf;
     grid-area: header;
-
+    font-size: medium;
     span{
        font-family: monospace;
     }
-    .svg-div{
+    .flex-container{
         display: flex;
         width: 200px;
         align-items: center;
         justify-content: space-around;
     }
-    .nav-bell{
-        fill: white;
-        height: 30px;
-        border-right: solid black 1px;
-        padding-right: 1em;
+    .svg-container{
+        border-right: 1px solid black;
+        .nav-bell{
+            fill: white;
+            height: 30px;
+            padding-right: 1em;
+            &:hover{
+                fill: lime;
+                transition: .3s ease-in;
+                animation: bell .5s ease-in-out  backwards;
+                animation: name duration timing-function delay iteration-count direction fill-mode;
+            }
+        }
     }
+    
     img{
+        border-left: solid black 1px;
+
         border-radius: 360px;
         height: 30px; 
     }
+}
 
+@keyframes bell {
+    
+    50%{
+        transform: scale(1.3);
+        
+    }
+    75%{
+        transform: scale(.8);
+        
+    }
 }

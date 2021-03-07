@@ -345,40 +345,63 @@ template {
 
 header {
   color: white;
-  padding: 0.8em;
+  padding: 0.5em;
   display: grid;
   grid-template-columns: 1fr auto auto;
   justify-content: space-between;
-  background-color: #514efa;
+  background-color: #7477bf;
   grid-area: header;
+  font-size: medium;
 }
 header span {
   font-family: monospace;
 }
-header .svg-div {
+header .flex-container {
   display: flex;
   width: 200px;
   align-items: center;
   justify-content: space-around;
 }
-header .nav-bell {
+header .svg-container {
+  border-right: 1px solid black;
+}
+header .svg-container .nav-bell {
   fill: white;
   height: 30px;
-  border-right: solid black 1px;
   padding-right: 1em;
 }
+header .svg-container .nav-bell:hover {
+  fill: lime;
+  transition: 0.3s ease-in;
+  animation: bell 0.5s ease-in-out backwards;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
 header img {
+  border-left: solid black 1px;
   border-radius: 360px;
   height: 30px;
 }
 
+@keyframes bell {
+  50% {
+    transform: scale(1.3);
+  }
+  75% {
+    transform: scale(0.8);
+  }
+}
 nav {
   height: 70px;
   background-color: #302e9e;
   grid-area: nav;
+  color: white;
 }
 nav a {
   color: white;
+}
+nav a:hover {
+  color: lime;
+  border-bottom: solid 5px lime;
 }
 nav img {
   height: 30px;
@@ -406,13 +429,14 @@ nav .flex-img {
 }
 .main-header .main-header-search input {
   border-radius: 5px;
+  height: 2em;
 }
 
 .alert {
-  background-color: blueviolet;
+  background-color: #7477bf;
   max-width: 95%;
   margin: 0 auto;
-  padding: 1em;
+  padding: 0 1.5em;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -421,7 +445,6 @@ nav .flex-img {
 
 .social-container {
   background-color: whitesmoke;
-  border: solid 1px black;
   border-radius: 10px;
   color: #514efa;
   margin: 1em;
@@ -491,17 +514,26 @@ nav .flex-img {
   list-style-type: none;
   align-items: center;
 }
+.traffic-header .traffic-nav a {
+  text-decoration: none;
+}
+.traffic-header .traffic-nav a:hover {
+  background-color: lime;
+}
 
 .message, .settings {
   background-color: whitesmoke;
   padding: 1em;
   margin: 1em;
-  border: solid 1px black;
   border-radius: 5px;
 }
 @media (min-width: 768px) {
   .message, .settings {
+    border: solid 1px black;
+    font-size: smaller;
     margin: 0;
+    display: grid;
+    background-color: white;
   }
 }
 .message input, .settings input {
@@ -518,8 +550,14 @@ nav .flex-img {
 .message .widget-container .button-primary, .settings .widget-container .button-primary {
   height: 3em;
   color: white;
-  background-color: #302e9e;
+  background-color: #7477bf;
   margin-bottom: 1em;
+}
+.message .toggle-flex, .settings .toggle-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
 }
 
 .switch-light.switch-candy > span {
@@ -546,7 +584,7 @@ nav .flex-img {
   height: 3em;
   width: 45%;
   color: white;
-  background-color: #302e9e;
+  background-color: #7477bf;
   margin-bottom: 1em;
 }
 .settings-button .button-disabled {
@@ -558,6 +596,7 @@ nav .flex-img {
 
 canvas {
   max-width: 100%;
+  width: 140vw;
 }
 
 .grid-container {
@@ -616,7 +655,6 @@ section h3 {
   grid-template-columns: auto;
   grid-row-gap: 1em;
   align-items: center;
-  background-color: whitesmoke;
 }
 @media (min-width: 768px) {
   .members, .activity {
@@ -625,24 +663,27 @@ section h3 {
 }
 
 .members-container {
-  margin: 0 1.2em;
+  background-color: whitesmoke;
+  margin: 0 1em;
   width: 95%;
   display: flex;
   align-items: center;
   border-radius: 10px;
   padding: 1em;
-  border-bottom: solid 1px black;
 }
-.members-container:nth-last-child(1) {
-  border-bottom: none;
-}
-.members-container-text {
+.members-container .members-text {
   padding-left: 0.5em;
 }
 @media (min-width: 768px) {
   .members-container {
-    font-size: small;
+    background-color: white;
+    font-size: x-small;
+    padding: 5px;
+    border-bottom: solid 1px black;
     border-radius: 0px;
+  }
+  .members-container:nth-last-child(1) {
+    border-bottom: none;
   }
 }
 @media (min-width: 768px) {

@@ -2,10 +2,13 @@
     background-color: whitesmoke;
     padding: 1em;
     margin: 1em;
-    border: solid 1px black;
     border-radius: 5px;
     @media(min-width:768px){
+        border: solid 1px black;
+        font-size: smaller;
         margin: 0;
+        display: grid;
+        background-color: white;
     }
     input{
         height: 3em;
@@ -20,9 +23,15 @@
         .button-primary{
             height: 3em;
             color:white;
-            background-color: #302e9e;
+            background-color: #7477bf;
             margin-bottom: 1em;
         }  
+    }
+    .toggle-flex{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1em;
     }
 }
 .switch-light.switch-candy > span{
@@ -41,12 +50,12 @@
     display: flex;
     justify-content: space-evenly;
     padding: 1em;
-    
+    // margin-top: 1em;
     .button-primary{
         height: 3em;
         width:45%;
         color:white;
-        background-color: #302e9e;
+        background-color: #7477bf;
         margin-bottom: 1em;
     }
     .button-disabled{

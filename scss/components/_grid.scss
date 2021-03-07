@@ -1,5 +1,6 @@
 canvas{
     max-width: 100%;
+    width: 140vw;
 }
 
 
@@ -45,6 +46,7 @@ canvas{
 //Responsive to screen resizing
 .widget-container-full, .widget-container-half {
     width: 95vw;
+    // width: 130vw;
 }
     @media(min-width: 768px){
         .widget-container-full{
