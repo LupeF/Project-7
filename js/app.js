@@ -17,9 +17,16 @@ alertbanner.addEventListener('click', e =>{
     }
 });
 
+//?variables for exceeds expectations//
+let hourly = document.getElementById('hourly').textContent;
+let daily = document.getElementById('daily').textContent;
+let weekly = document.getElementById('weekly').textContent;
+let monthly = document.getElementById('monthly').textContent;
+
+
 //* line-chart//
 const trafficCanvas = document.getElementById('traffic-chart');
-let trafficData = {
+let hourlyTraffic = {
     labels: ["1:00",
              "2:00",
              "3:00",
@@ -30,10 +37,24 @@ let trafficData = {
              "8:00",
              "9:00",
              "10:00",
-             "11:00"],
+             "11:00",
+             "12:00",
+             "13:00",
+             "14:00",
+             "15:00",
+             "16:00",
+             "17:00",
+             "18:00",
+             "19:00",
+             "20:00",
+             "21:00",
+             "22:00",
+             "23:00",
+             "24:00",
+            ],
     datasets: [
         {
-            data: [0, 100, 300, 48, 100, 250, 450,380,550,500,370],
+            data: [660, 400, 600, 568, 400, 450, 550,780,550,420,320, 200, 380, 500, 220, 159, 120, 300, 430, 278, 600, 370, 240, 200],
             backgroundColor: 'rgba(116,119,191,.3)',
             borderWidth:1,
         }
@@ -57,9 +78,47 @@ let trafficOptions = {
 };
 let trafficChart = new Chart(trafficCanvas,{
     type: 'line',
-    data: trafficData,
+    data: hourlyTraffic,
     options: trafficOptions
 });
+// top is original
+
+//? adding new objects for the exceeding expectations
+// let dailyTraffic = {
+//     labels: ["Monday",
+//              "Tuesday",
+//              "Wednseday",
+//              "Thursday",
+//              "Friday",
+//              "Saturday",
+//              "Sunday",
+//             ],
+//     datasets: [
+//         {
+//             data: [1500, 3000, 4500, 6000, 7500, 9000, 10500],
+//             backgroundColor: 'rgba(116,119,191,.3)',
+//             borderWidth:1,
+//         }
+//     ]
+// }
+
+// hourly.addEventListener('click', () =>{
+//     trafficChart = new Chart(trafficCanvas,{
+//         type: 'line',
+//         data: hourlyTraffic,
+//         options: trafficOptions
+//     });
+// });
+
+// daily.addEventListener('click', () =>{
+//     trafficChart = new Chart(trafficCanvas,{
+//         type: 'line',
+//         data: dailyTraffic,
+//         options: trafficOptions
+//     });
+// });
+
+
 
 //* bar graph//
 const dailyCanvas = document.getElementById('daily-chart');
