@@ -363,7 +363,12 @@ header .flex-container {
   justify-content: space-around;
 }
 header .svg-container {
-  border-right: 1px solid black;
+  position: relative;
+}
+header .svg-container:hover {
+  fill: lime;
+  transition: 0.3s ease-in;
+  animation: bell 0.5s ease-in-out backwards;
 }
 header .svg-container .green-dot {
   height: 5px;
@@ -371,21 +376,20 @@ header .svg-container .green-dot {
   border-radius: 50%;
   position: absolute;
   background-color: lime;
+  right: 20px;
 }
 header .svg-container .nav-bell {
   fill: white;
   height: 30px;
   padding-right: 1em;
 }
-header .svg-container .nav-bell:hover {
-  fill: lime;
-  transition: 0.3s ease-in;
-  animation: bell 0.5s ease-in-out backwards;
-  animation: name duration timing-function delay iteration-count direction fill-mode;
+header .img-container {
+  border-left: 1px solid black;
 }
 header img {
   border-radius: 360px;
   height: 30px;
+  padding-left: 8px;
 }
 
 @keyframes bell {
@@ -406,7 +410,7 @@ nav a {
   color: white;
 }
 nav a:hover {
-  color: lime;
+  animation: bell 0.3s ease-in-out;
   border-bottom: solid 5px lime;
 }
 nav img {
@@ -585,6 +589,7 @@ nav .flex-img {
   display: flex;
   justify-content: space-evenly;
   padding: 1em;
+  margin-top: 1em;
 }
 .settings-button .button-primary {
   height: 3em;

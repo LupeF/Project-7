@@ -6,7 +6,8 @@ nav{
     a {
       color: white;
       &:hover{
-          color: lime;   //? not sure why it's not adding color//
+          animation: bell .3s ease-in-out   ;
+        //   color: lime;   //? not sure why it's not adding color//
           border-bottom: solid 5px lime;  //* works on border*//
       }
     }

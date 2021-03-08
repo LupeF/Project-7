@@ -29,10 +29,11 @@
         font-size: x-small;
         padding: 5px;
         border-bottom: solid 1px black;
-      &:nth-last-child(1){
-        border-bottom: none;
-      }
         border-radius: 0px; 
+        &:nth-last-child(1){
+          border-bottom: none;
+        }
+       
       }
       .activity{
         @media(min-width: 768px){

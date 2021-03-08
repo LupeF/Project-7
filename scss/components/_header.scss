@@ -18,31 +18,35 @@ header{
         justify-content: space-around;
     }
     .svg-container{
-        border-right: 1px solid black;
+        // border-right: 1px solid black;
+        position: relative;
+        &:hover{
+            fill: lime;
+                transition: .3s ease-in;
+                animation: bell .5s ease-in-out  backwards;
+        }
         .green-dot{
             height: 5px;
             width: 5px;
             border-radius: 50%;
             position: absolute;
             background-color: lime;
+            right: 20px;
             
         }
         .nav-bell{
             fill: white;
             height: 30px;
             padding-right: 1em;
-            &:hover{
-                fill: lime;
-                transition: .3s ease-in;
-                animation: bell .5s ease-in-out  backwards;
-                animation: name duration timing-function delay iteration-count direction fill-mode;
-            }
         }
     }
-    
+    .img-container{
+        border-left: 1px solid black;
+    }
     img{
         border-radius: 360px;
         height: 30px; 
+        padding-left: 8px;
     }
 }
 
