@@ -365,6 +365,13 @@ header .flex-container {
 header .svg-container {
   border-right: 1px solid black;
 }
+header .svg-container .green-dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: lime;
+}
 header .svg-container .nav-bell {
   fill: white;
   height: 30px;
@@ -377,7 +384,6 @@ header .svg-container .nav-bell:hover {
   animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 header img {
-  border-left: solid black 1px;
   border-radius: 360px;
   height: 30px;
 }
