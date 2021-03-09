@@ -1,13 +1,13 @@
 
 header{
     color: white;
-    padding: .5em;
+    padding: .5em 1.5em;
     display: grid;
     grid-template-columns: 1fr auto auto;
     justify-content: space-between;
     background-color: #7477bf;
     grid-area: header;
-    font-size: medium;
+    font-size: smaller;
     span{
        font-family: monospace;
     }
@@ -18,12 +18,9 @@ header{
         justify-content: space-around;
     }
     .svg-container{
-        // border-right: 1px solid black;
         position: relative;
         &:hover{
-            fill: lime;
-                transition: .3s ease-in;
-                animation: bell .5s ease-in-out  backwards;
+            animation: bell .5s ease-in-out  backwards;
         }
         .green-dot{
             height: 5px;
@@ -36,8 +33,13 @@ header{
         }
         .nav-bell{
             fill: white;
+            transition: fill .8s ease-out;
             height: 30px;
             padding-right: 1em;
+            &:hover{
+                fill: lime;
+                    transition: fill .3s ease-in; 
+            }
         }
     }
     .img-container{

@@ -7,12 +7,12 @@ nav{
       color: white;
       &:hover{
           animation: bell .3s ease-in-out   ;
-        //   color: lime;   //? not sure why it's not adding color//
           border-bottom: solid 5px lime;  //* works on border*//
       }
     }
     img{
         height: 30px;
+        
     }
     .flex-img{
         padding-top: 1em;

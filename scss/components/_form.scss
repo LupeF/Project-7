@@ -9,6 +9,9 @@
         margin: 0;
         display: grid;
         background-color: white;
+        h3{
+            padding-left: 0;
+        }
     }
     input{
         height: 3em;
@@ -24,7 +27,8 @@
             height: 3em;
             color:white;
             background-color: #7477bf;
-            margin-bottom: 1em;
+            // margin-bottom: 1em;
+            margin-top: 8px;
         }  
     }
     .toggle-flex{
@@ -48,19 +52,20 @@
 }
 .settings-button{
     display: flex;
-    justify-content: space-evenly;
-    padding: 1em;
-    margin-top: 1em;
+    margin-top:  1em;
     .button-primary{
         height: 3em;
-        width:45%;
+        width:50%;
         color:white;
         background-color: #7477bf;
-        margin-bottom: 1em;
+        // margin-bottom: .2em;
+        // margin-top: 7px;
+        
     }
     .button-disabled{
+        margin-left: 10px;
         height: 3em;
-        width: 45%;
+        width: 50%;
         color: white;
         background-color: rgb(187, 187, 187);
     }

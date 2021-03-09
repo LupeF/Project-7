@@ -336,6 +336,14 @@ template {
   display: none;
 }
 
+button, textarea, select {
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Arsenal", sans-serif;
@@ -345,13 +353,13 @@ template {
 
 header {
   color: white;
-  padding: 0.5em;
+  padding: 0.5em 1.5em;
   display: grid;
   grid-template-columns: 1fr auto auto;
   justify-content: space-between;
   background-color: #7477bf;
   grid-area: header;
-  font-size: medium;
+  font-size: smaller;
 }
 header span {
   font-family: monospace;
@@ -366,8 +374,6 @@ header .svg-container {
   position: relative;
 }
 header .svg-container:hover {
-  fill: lime;
-  transition: 0.3s ease-in;
   animation: bell 0.5s ease-in-out backwards;
 }
 header .svg-container .green-dot {
@@ -380,8 +386,13 @@ header .svg-container .green-dot {
 }
 header .svg-container .nav-bell {
   fill: white;
+  transition: fill 0.8s ease-out;
   height: 30px;
   padding-right: 1em;
+}
+header .svg-container .nav-bell:hover {
+  fill: lime;
+  transition: fill 0.3s ease-in;
 }
 header .img-container {
   border-left: 1px solid black;
@@ -435,7 +446,12 @@ nav .flex-img {
   grid-template-columns: 180px auto;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1em;
+  padding: 0 1em;
+}
+@media (min-width: 768px) {
+  .main-header {
+    padding: 0 1.3em;
+  }
 }
 .main-header .main-header-search input {
   border-radius: 5px;
@@ -456,6 +472,7 @@ nav .flex-img {
 .social-container {
   background-color: whitesmoke;
   border-radius: 10px;
+  font-size: smaller;
   color: #514efa;
   margin: 1em;
   display: grid;
@@ -488,11 +505,18 @@ nav .flex-img {
   fill: white;
 }
 .social-container .social-text {
-  margin-left: 1.5em;
+  display: grid;
+  grid-template-rows: 0px;
 }
-.social-container .social-text span {
+@media (min-width: 768px) {
+  .social-container .social-text {
+    margin-left: 2em;
+    grid-template-rows: 0px;
+  }
+}
+.social-container .stats {
   color: black;
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 @media (min-width: 768px) {
@@ -545,6 +569,9 @@ nav .flex-img {
     display: grid;
     background-color: white;
   }
+  .message h3, .settings h3 {
+    padding-left: 0;
+  }
 }
 .message input, .settings input {
   height: 3em;
@@ -561,7 +588,7 @@ nav .flex-img {
   height: 3em;
   color: white;
   background-color: #7477bf;
-  margin-bottom: 1em;
+  margin-top: 8px;
 }
 .message .toggle-flex, .settings .toggle-flex {
   display: flex;
@@ -587,20 +614,18 @@ nav .flex-img {
 
 .settings-button {
   display: flex;
-  justify-content: space-evenly;
-  padding: 1em;
   margin-top: 1em;
 }
 .settings-button .button-primary {
   height: 3em;
-  width: 45%;
+  width: 50%;
   color: white;
   background-color: #7477bf;
-  margin-bottom: 1em;
 }
 .settings-button .button-disabled {
+  margin-left: 10px;
   height: 3em;
-  width: 45%;
+  width: 50%;
   color: white;
   background-color: #bbbbbb;
 }
@@ -679,6 +704,7 @@ section h3 {
   width: 95%;
   display: flex;
   align-items: center;
+  font-size: smaller;
   border-radius: 10px;
   padding: 1em;
 }

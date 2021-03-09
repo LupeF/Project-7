@@ -1,15 +1,27 @@
-//*notifications//
-const notification = document.getElementById('notifications');
 
-
-//*creates Alertbanner// 
 const alertbanner = document.getElementById('alert');
+const trafficCanvas = document.getElementById('traffic-chart');
+const dailyCanvas = document.getElementById('daily-chart');
+const mobileCanvas = document.getElementById('mobile-users');
+//?variables for exceeds expectations//
+let hourly = document.getElementById('hourly');
+let daily = document.getElementById('daily');
+let weekly = document.getElementById('weekly');
+let monthly = document.getElementById('monthly');
+
+//********************//
+//*creates Alertbanner// 
+//*********************//
 alertbanner.innerHTML = `
 <div class="alert-banner">
 <p> <strong> Alert: </strong> You have <strong>6</strong> overdue tasks to complete!</p>
 </div>
 <p class="alert-banner-close"> x </p>
 `;
+
+//*******************//
+//*closes banner when clicked//
+//*********************//
 alertbanner.addEventListener('click', e =>{
     const div = e.target;
     if(div.classList.contains("alert-banner-close")){
@@ -17,15 +29,10 @@ alertbanner.addEventListener('click', e =>{
     }
 });
 
-//?variables for exceeds expectations//
-let hourly = document.getElementById('hourly').textContent;
-let daily = document.getElementById('daily').textContent;
-let weekly = document.getElementById('weekly').textContent;
-let monthly = document.getElementById('monthly').textContent;
+//*************//
+//* line-chart data//
+//*************//
 
-
-//* line-chart//
-const trafficCanvas = document.getElementById('traffic-chart');
 let hourlyTraffic = {
     labels: ["1:00",
              "2:00",
@@ -35,7 +42,7 @@ let hourlyTraffic = {
              "6:00",
              "7:00",
              "8:00",
-             "9:00",
+             "9:00", 
              "10:00",
              "11:00",
              "12:00",
@@ -54,7 +61,30 @@ let hourlyTraffic = {
             ],
     datasets: [
         {
-            data: [660, 400, 600, 568, 400, 450, 550,780,550,420,320, 200, 380, 500, 220, 159, 120, 300, 430, 278, 600, 370, 240, 200],
+            data: [660, 
+                   400,
+                   600, 
+                   568, 
+                   400, 
+                   450, 
+                   550,
+                   780,
+                   550,
+                   420,
+                   320, 
+                   200, 
+                   380, 
+                   500, 
+                   220, 
+                   159, 
+                   120, 
+                   300, 
+                   430, 
+                   278, 
+                   600, 
+                   370, 
+                   240, 
+                   200],
             backgroundColor: 'rgba(116,119,191,.3)',
             borderWidth:1,
         }
@@ -81,7 +111,60 @@ let trafficChart = new Chart(trafficCanvas,{
     data: hourlyTraffic,
     options: trafficOptions
 });
-// top is original
+//original 
+
+//***********//
+
+const dailyInfo = (element) =>{
+    let element = {
+        labels: ["Monday",
+                 "Tuesday",
+                 "Wednseday",
+                 "Thursday",
+                 "Friday",
+                 "Saturday",
+                 "Sunday",
+                ],
+        datasets: [
+            {
+                data: [1500, 3000, 4500, 6000, 7500, 9000, 10500],
+                backgroundColor: 'rgba(116,119,191,.3)',
+                borderWidth:1,
+            }
+        ]
+    };
+    let trafficOptions = {
+        aspectRatio: 2.5,
+        animation: {
+            duration: 0
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        legend: {
+            display: false
+        }
+    };
+
+    let trafficChart = new Chart(trafficCanvas,{
+        type: 'line',
+        data: element,
+        options: trafficOptions
+    });
+ 
+};
+
+daily.addEventListener('click', (e) =>{
+    const element = e.target;
+    dailyInfo(element);
+});
+
+
+
 
 //? adding new objects for the exceeding expectations
 // let dailyTraffic = {
@@ -102,26 +185,10 @@ let trafficChart = new Chart(trafficCanvas,{
 //     ]
 // }
 
-// hourly.addEventListener('click', () =>{
-//     trafficChart = new Chart(trafficCanvas,{
-//         type: 'line',
-//         data: hourlyTraffic,
-//         options: trafficOptions
-//     });
-// });
-
-// daily.addEventListener('click', () =>{
-//     trafficChart = new Chart(trafficCanvas,{
-//         type: 'line',
-//         data: dailyTraffic,
-//         options: trafficOptions
-//     });
-// });
-
 
 
 //* bar graph//
-const dailyCanvas = document.getElementById('daily-chart');
+
 let dailyData = {
     labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     datasets: [
@@ -153,7 +220,7 @@ let dailyChart = new Chart(dailyCanvas,{
 });
 
 //*Donut-graph//
-const mobileCanvas = document.getElementById('mobile-users');
+
 let mobileData = {
     labels: ['Phones', 'Tablets', 'Desktop',],
     datasets: [{
