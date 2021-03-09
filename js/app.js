@@ -9,6 +9,21 @@ let daily = document.getElementById('daily');
 let weekly = document.getElementById('weekly');
 let monthly = document.getElementById('monthly');
 
+function addData(chart, label, data){
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset)=>{
+        dataset.data.push(data);
+    });
+    chart.update();
+};
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+};
+
 //********************//
 //*creates Alertbanner// 
 //*********************//
@@ -30,7 +45,7 @@ alertbanner.addEventListener('click', e =>{
 });
 
 //*************//
-//* line-chart data//
+//* Hourly line-chart data//
 //*************//
 
 let hourlyTraffic = {
@@ -111,56 +126,108 @@ let trafficChart = new Chart(trafficCanvas,{
     data: hourlyTraffic,
     options: trafficOptions
 });
-//original 
-
-//***********//
-
-const dailyInfo = (element) =>{
-    let element = {
-        labels: ["Monday",
-                 "Tuesday",
-                 "Wednseday",
-                 "Thursday",
-                 "Friday",
-                 "Saturday",
-                 "Sunday",
-                ],
-        datasets: [
-            {
-                data: [1500, 3000, 4500, 6000, 7500, 9000, 10500],
-                backgroundColor: 'rgba(116,119,191,.3)',
-                borderWidth:1,
-            }
-        ]
-    };
-    let trafficOptions = {
-        aspectRatio: 2.5,
-        animation: {
-            duration: 0
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        },
-        legend: {
-            display: false
-        }
-    };
-
-    let trafficChart = new Chart(trafficCanvas,{
-        type: 'line',
-        data: element,
-        options: trafficOptions
-    });
  
+
+//*************//
+//* daily line-chart data//
+//*************//
+let dailyT = {
+    labels: ["Monday",
+             "Tuesday",
+             "Wednseday",
+             "Thursday",
+             "Friday",
+             "Saturday",
+             "Sunday",
+            ],
+    datasets: [
+        {
+            data: [560, 1000, 450, 660, 1200, 900, 775],
+            backgroundColor: 'rgba(116,119,191,.3)',
+            borderWidth:1,
+        }
+    ]
+};  
+
+//*************//
+//* weekly line-chart data//
+//*************//
+let weeklyTraff = {
+    labels: ["1-7",
+             "8-17",
+             "18-25",
+             "26-34",
+             "35-42",
+             "43-50",
+             "51-58",
+            ],
+    datasets: [
+        {
+            data: [260, 660, 450, 260, 720, 900, 555],
+            backgroundColor: 'rgba(116,119,191,.3)',
+            borderWidth:1,
+        }
+    ]
+}; 
+
+//*************//
+//* monthly line-chart data//
+//*************//
+let monthlyTraff = {
+    labels: ["January",
+             "February",
+             "March",
+             "April",
+             "May",
+             "June",
+             "July",
+             "August",
+             "September",
+             "October",
+             "November",
+             "December"
+
+            ],
+    datasets: [
+        {
+            data: [70, 360, 650, 260, 720, 440, 800, 678, 467, 754, 932, 456],
+            backgroundColor: 'rgba(116,119,191,.3)',
+            borderWidth:1,
+        }
+    ]
 };
 
+hourly.addEventListener('click', (e) =>{
+    let trafficChart = new Chart(trafficCanvas,{
+        type: 'line',
+        data: hourlyTraffic,
+        options: trafficOptions
+    });
+    addData(trafficChart, hourlyTraffic.labels, hourlyTraffic.dataset[0].data);
+});   
 daily.addEventListener('click', (e) =>{
-    const element = e.target;
-    dailyInfo(element);
+    let trafficdaily = new Chart(trafficCanvas,{
+        type: 'line',
+        data: dailyT,
+        options: trafficOptions
+    });
+    addData(trafficdaily, dailyT.labels, dailyT.dataset[0].data);
+});
+weekly.addEventListener('click', (e) =>{
+    let trafficWeekly = new Chart(trafficCanvas,{
+        type: 'line',
+        data: weeklyTraff,
+        options: trafficOptions
+    });
+    addData(trafficWeekly, weeklyTraff.labels, weeklyTraff.dataset[0].data);
+});
+monthly.addEventListener('click', (e) =>{
+    let trafficMonthly = new Chart(trafficCanvas,{
+        type: 'line',
+        data: monthlyTraff,
+        options: trafficOptions
+    });
+    addData(trafficMonthly, monthlyTraff.labels, monthlyTraff.dataset[0].data);
 });
 
 
