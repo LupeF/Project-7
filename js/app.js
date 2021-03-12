@@ -330,12 +330,12 @@ send.addEventListener('click', ()=>{
 let searchNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
 
 userInput.addEventListener('click', ()=>{
+    let names = [];
     for(let i=0; i < searchNames.length; i++){
-        let names = [];
         names = searchNames[i];
-        };
-    if(userInput.value === names.includes()){
-
+        }
+    if(userInput.value === names.includes(names)){
+        return names
     }
 });
 
