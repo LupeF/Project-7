@@ -324,16 +324,24 @@ send.addEventListener('click', ()=>{
     }
 });
 
+//******************//
+//* auto-complete*//
+//******************//
 let searchNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
 
-// userInput.addEventListener('click', ()=>{
-//     for(let i=0; i < searchNames.length; i++){
-//         let names = searchNames[i];
-//         if(userInput.value === names.includes())
-//     };
-    
-// });
+userInput.addEventListener('click', ()=>{
+    for(let i=0; i < searchNames.length; i++){
+        let names = [];
+        names = searchNames[i];
+        };
+    if(userInput.value === names.includes()){
 
+    }
+});
+
+//******************//
+//*  local storage *//
+//******************//
 send.addEventListener('click', ()=>{
-    localStorage.setItem(searchNames);
+    localStorage.setItem('array', searchNames);
 })
