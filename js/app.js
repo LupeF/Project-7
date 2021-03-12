@@ -9,6 +9,9 @@ let daily = document.getElementById('daily');
 let weekly = document.getElementById('weekly');
 let monthly = document.getElementById('monthly');
 
+//********************//
+//*functions for Linegraph// 
+//*********************//
 function addData(chart, label, data){
     chart.data.labels.push(label);
     chart.data.datasets.forEach((dataset)=>{
@@ -25,7 +28,7 @@ function removeData(chart) {
 };
 
 //********************//
-//*creates Alertbanner// 
+//*creates Alertbanner and inserts in element// 
 //*********************//
 alertbanner.innerHTML = `
 <div class="alert-banner">
@@ -47,7 +50,6 @@ alertbanner.addEventListener('click', e =>{
 //*************//
 //* Hourly line-chart data//
 //*************//
-
 let hourlyTraffic = {
     labels: ["1:00",
              "2:00",
@@ -121,7 +123,7 @@ let trafficOptions = {
         display: false
     }
 };
-let trafficChart = new Chart(trafficCanvas,{
+let hourlyChart = new Chart(trafficCanvas,{
     type: 'line',
     data: hourlyTraffic,
     options: trafficOptions
@@ -196,7 +198,9 @@ let monthlyTraff = {
         }
     ]
 };
-
+//*****************//
+//*event listeners for line-graph//
+//*****************//
 hourly.addEventListener('click', (e) =>{
     let trafficChart = new Chart(trafficCanvas,{
         type: 'line',
@@ -233,27 +237,6 @@ monthly.addEventListener('click', (e) =>{
 
 
 
-//? adding new objects for the exceeding expectations
-// let dailyTraffic = {
-//     labels: ["Monday",
-//              "Tuesday",
-//              "Wednseday",
-//              "Thursday",
-//              "Friday",
-//              "Saturday",
-//              "Sunday",
-//             ],
-//     datasets: [
-//         {
-//             data: [1500, 3000, 4500, 6000, 7500, 9000, 10500],
-//             backgroundColor: 'rgba(116,119,191,.3)',
-//             borderWidth:1,
-//         }
-//     ]
-// }
-
-
-
 //* bar graph//
 
 let dailyData = {
@@ -286,8 +269,8 @@ let dailyChart = new Chart(dailyCanvas,{
     options: dailyOptions
 });
 
-//*Donut-graph//
 
+//*Donut-graph//
 let mobileData = {
     labels: ['Phones', 'Tablets', 'Desktop',],
     datasets: [{
@@ -336,3 +319,17 @@ send.addEventListener('click', ()=>{
         alert(`Message was Successfully sent to ${userInput.value}`); //!alert
     }
 });
+
+let searchNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
+
+// userInput.addEventListener('click', ()=>{
+//     for(let i=0; i < searchNames.length; i++){
+//         let names = searchNames[i];
+//         if(userInput.value === names.includes())
+//     };
+    
+// });
+
+send.addEventListener('click', ()=>{
+    localStorage.setItem(searchNames);
+})

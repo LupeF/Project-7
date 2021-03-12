@@ -471,14 +471,21 @@ nav .flex-img {
 
 .social-container {
   background-color: whitesmoke;
+  border: solid 1px black;
   border-radius: 10px;
   font-size: smaller;
+  box-shadow: 5px 3px 5px black;
   color: #514efa;
   margin: 1em;
   display: grid;
   grid-template-columns: 200px 200px;
   padding: 0 2em;
   align-items: center;
+}
+@media (min-width: 700px) {
+  .social-container {
+    justify-content: center;
+  }
 }
 @media (min-width: 768px) {
   .social-container {
@@ -507,6 +514,7 @@ nav .flex-img {
 .social-container .social-text {
   display: grid;
   grid-template-rows: 0px;
+  padding-top: 1em;
 }
 @media (min-width: 768px) {
   .social-container .social-text {
@@ -516,7 +524,8 @@ nav .flex-img {
 }
 .social-container .stats {
   color: black;
-  font-size: xx-large;
+  font-size: x-large;
+  padding-top: 8px;
 }
 
 @media (min-width: 768px) {
@@ -548,17 +557,20 @@ nav .flex-img {
   list-style-type: none;
   align-items: center;
 }
-.traffic-header .traffic-nav a {
-  text-decoration: none;
+.traffic-header .traffic-nav li {
+  padding: 5PX;
 }
-.traffic-header .traffic-nav a:hover {
+.traffic-header .traffic-nav li:hover {
+  border: solid 1px black;
   background-color: lime;
+  border-radius: 5px;
+  padding: 4px;
 }
 
 .message, .settings {
   background-color: whitesmoke;
   padding: 1em;
-  margin: 1em;
+  margin: 1em 1em 0 1em;
   border-radius: 5px;
 }
 @media (min-width: 768px) {
@@ -575,6 +587,7 @@ nav .flex-img {
 }
 .message input, .settings input {
   height: 3em;
+  box-shadow: 0 2px 2px black;
 }
 .message .widget-container, .settings .widget-container {
   display: flex;
@@ -606,6 +619,7 @@ nav .flex-img {
   width: 100%;
   height: 3em;
   margin-top: 1em;
+  box-shadow: 0 2px 2px black;
 }
 
 .switch-light {
@@ -691,6 +705,7 @@ section h3 {
   grid-template-columns: auto;
   grid-row-gap: 1em;
   align-items: center;
+  padding: 1em;
 }
 @media (min-width: 768px) {
   .members, .activity {
@@ -701,12 +716,14 @@ section h3 {
 .members-container {
   background-color: whitesmoke;
   margin: 0 1em;
+  box-shadow: 5px 3px 5px black;
   width: 95%;
   display: flex;
   align-items: center;
   font-size: smaller;
   border-radius: 10px;
   padding: 1em;
+  position: relative;
 }
 .members-container .members-text {
   padding-left: 0.5em;
@@ -717,6 +734,7 @@ section h3 {
     font-size: x-small;
     padding: 5px;
     border-bottom: solid 1px black;
+    box-shadow: none;
     border-radius: 0px;
   }
   .members-container:nth-last-child(1) {
