@@ -1,4 +1,4 @@
-
+const magnaGlass = document.getElementById('magnifying-g');
 const alertbanner = document.getElementById('alert');
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
@@ -26,6 +26,10 @@ function removeData(chart) {
     });
     chart.update();
 };
+//*add search functionality//
+magnaGlass.addEventListener('click', (e)=>{
+
+})
 
 //********************//
 //*creates Alertbanner and inserts in element// 
