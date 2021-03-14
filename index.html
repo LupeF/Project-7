@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web App Dashboard</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/toggle-switch-px.css">
     <link rel="stylesheet" href="css/toggle-switch-rem.css">
     <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital@1&family=Hind:wght@300&family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/toggle-switch-px.css">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="grid-container"> 
@@ -223,9 +224,9 @@
         <section class="message">
             <h3>MESSAGE USER</h3>
             <form class="widget-container">
-                
-                <input type="search" placeholder="Search for User" id="userField">
-                
+                <div>
+                    <input type="search" placeholder="Search for User" id="userField">
+                </div>
                 <textarea placeholder="Message for User" class="form-field textarea" id="messageField" ></textarea>
                 <button class="button-primary" id="send">Send</button>
             </form>
@@ -237,7 +238,7 @@
             <div class="toggle-flex">
                 <p>Send Email Notifications</p>
                 <label class="switch-light switch-candy" onclick="">
-                    <input type="checkbox">
+                    <input type="checkbox" id="switches">
                     <span>
                     <span>Off</span>
                     <span>On</span>
@@ -250,7 +251,7 @@
             <div class="toggle-flex">
             <p>Set Profile to Public</p>
                 <label class="switch-light switch-candy" onclick="">
-                    <input type="checkbox" class="check">
+                    <input type="checkbox" class="check" id="switches">
                     <span>
                     <span>Off</span>
                     <span>On</span>
@@ -266,7 +267,7 @@
                 <option>Central</option>
             </select>
             <div class="settings-button">
-                <button class="button-primary">SAVE</button>
+                <button class="button-primary" id="saveBtn">SAVE</button>
                 <button class="button-disabled">CANCEL</button>
             </div>
         </section>

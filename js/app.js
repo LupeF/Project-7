@@ -1,13 +1,19 @@
+//?variables for graphs//
 const magnaGlass = document.getElementById('magnifying-g');
 const alertbanner = document.getElementById('alert');
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
 const mobileCanvas = document.getElementById('mobile-users');
-//?variables for exceeds expectations//
+//?variables for linegraph//
 let hourly = document.getElementById('hourly');
 let daily = document.getElementById('daily');
 let weekly = document.getElementById('weekly');
 let monthly = document.getElementById('monthly');
+//? variables for settings form//
+// const saveSetting = document.getElementById('settings');
+// const saveTimezone = document.getElementById('timezone');
+// const btnSave = document.querySelector('.button-primary');
+// const btnCancel = document.querySelector('.button-disabled');
 
 //********************//
 //*functions for Linegraph// 
@@ -329,19 +335,28 @@ send.addEventListener('click', ()=>{
 //******************//
 let searchNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
 
-userInput.addEventListener('click', ()=>{
-    let names = [];
-    for(let i=0; i < searchNames.length; i++){
-        names = searchNames[i];
-        }
-    if(userInput.value === names.includes(names)){
-        return names
-    }
+userInput.addEventListener('keyup', ()=>{
+    
 });
 
 //******************//
 //*  local storage *//
 //******************//
-send.addEventListener('click', ()=>{
-    localStorage.setItem('array', searchNames);
+const settingSwitches = document.getElementById('switches');
+const saveTimezone = document.getElementById('timezone');
+const btnSave = document.getElementById('saveBtn');
+const btnCancel = document.querySelector('.button-disabled');
+
+//? Adds local storage
+btnSave.addEventListener('click', ()=>{
+    if(settingSwitches){
+        localStorage.setItem('switch', settingSwitches.value);
+    } if(saveTimezone){
+        localStorage.setItem('tzone', saveTimezone.value);
+    }
+});
+//? removes local storage
+btnCancel.addEventListener('click', (e)=>{
+    localStorage.removeItem('switch');
+    localStorage.removeItem('tzone');
 })

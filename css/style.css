@@ -597,6 +597,7 @@ nav .flex-img {
 .message input, .settings input {
   height: 3em;
   box-shadow: 0 2px 2px black;
+  width: 100%;
 }
 .message .widget-container, .settings .widget-container {
   display: flex;
