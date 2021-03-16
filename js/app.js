@@ -15,6 +15,33 @@ let monthly = document.getElementById('monthly');
 // const btnSave = document.querySelector('.button-primary');
 // const btnCancel = document.querySelector('.button-disabled');
 
+//? variables for notification bell
+let notificationDiv = document.getElementById('notifications');
+const bellDiv = document.getElementById('bellMenu');
+
+
+//*notification drop down */
+document.getElementById('notifications').addEventListener('click',(e) => {
+    bellDiv.innerHTML = `
+    <div class="menuList">
+        <ul>
+        <a href=""><li> New Messages </li></a>
+        <a href=""><li> Viewed </li></a>
+        <a href=""><li> Sent </li></a>
+        </ul>
+    </div>
+    `;
+    bellDiv.style.opacity = 1;
+
+});
+
+document.getElementById('notifications').addEventListener('click',(e)=> {
+    if(bellDiv.contains("menuList")){
+        bellDiv.style.opacity = 0;
+    }
+})
+
+
 //********************//
 //*functions for Linegraph// 
 //*********************//
@@ -33,9 +60,9 @@ function removeData(chart) {
     chart.update();
 };
 //*add search functionality//
-magnaGlass.addEventListener('click', (e)=>{
+// magnaGlass.addEventListener('click', (e)=>{
 
-})
+// })
 
 //********************//
 //*creates Alertbanner and inserts in element// 
@@ -313,9 +340,12 @@ let mobileChart = new Chart(mobileCanvas, {
 
 
 //* Messaging Section 
+const div = document.getElementById('searchDiv');
 const userInput = document.getElementById('userField');
 const message = document.getElementById('messageField');
 const send = document.getElementById('send');
+
+
 
 //* Ensures Fields are filled out
 send.addEventListener('click', ()=>{
@@ -334,9 +364,17 @@ send.addEventListener('click', ()=>{
 //* auto-complete*//
 //******************//
 let searchNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
+let ul = document.createElement('ul');
+let li = document.createElement('li');
+div.appendChild(ul);
+userInput.addEventListener('keyup', (e)=>{
+   let validNames = searchNames.includes(e.target);
+   li += validNames;
+   
 
-userInput.addEventListener('keyup', ()=>{
-    
+   
+   
+
 });
 
 //******************//

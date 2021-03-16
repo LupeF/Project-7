@@ -19,6 +19,7 @@ header{
         width: 200px;
         align-items: center;
         justify-content: space-around;
+        position: relative;
     }
     .svg-container{
         position: relative;
@@ -44,6 +45,21 @@ header{
                     transition: fill .3s ease-in; 
             }
         }
+    }
+    #bellMenu{
+        position: absolute;
+        top: 50px;
+        left: -91px;
+        background-color: darkblue;
+        padding: 1em;
+        opacity: 0;
+        a {
+            list-style-type: none;
+            text-decoration: none;
+            padding: 6px;
+        }
+
+        
     }
     .img-container{
         border-left: 1px solid black;

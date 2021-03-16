@@ -371,6 +371,7 @@ header .flex-container {
   width: 200px;
   align-items: center;
   justify-content: space-around;
+  position: relative;
 }
 header .svg-container {
   position: relative;
@@ -395,6 +396,19 @@ header .svg-container .nav-bell {
 header .svg-container .nav-bell:hover {
   fill: lime;
   transition: fill 0.3s ease-in;
+}
+header #bellMenu {
+  position: absolute;
+  top: 50px;
+  left: -91px;
+  background-color: darkblue;
+  padding: 1em;
+  opacity: 0;
+}
+header #bellMenu a {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 6px;
 }
 header .img-container {
   border-left: 1px solid black;
