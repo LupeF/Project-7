@@ -5,6 +5,9 @@
     align-items: center;
     padding: 0 1em;
     position: relative;
+    input {
+        outline: none;
+    }
     .fa-search{
         position: absolute;
         top: 23px;

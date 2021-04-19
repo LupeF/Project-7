@@ -1,3 +1,5 @@
+//? variables for notification bell
+const bellDiv = document.getElementById('bellMenu');
 //?variables for graphs//
 const magnaGlass = document.getElementById('magnifying-g');
 const alertbanner = document.getElementById('alert');
@@ -9,19 +11,27 @@ let hourly = document.getElementById('hourly');
 let daily = document.getElementById('daily');
 let weekly = document.getElementById('weekly');
 let monthly = document.getElementById('monthly');
-//? variables for settings form//
-// const saveSetting = document.getElementById('settings');
-// const saveTimezone = document.getElementById('timezone');
-// const btnSave = document.querySelector('.button-primary');
-// const btnCancel = document.querySelector('.button-disabled');
+//? variable for auto-complete //
+let namesDiv = document.getElementById('namesList');
+//? variables for messaage form //
+const div = document.getElementById('searchDiv');
+const userInput = document.getElementById('userField');
+const message = document.getElementById('messageField');
+const send = document.getElementById('send');
+//? variables for local storage//
+const saveSetting = document.getElementById('settings');
+const saveTimezone = document.getElementById('timezone');
+const btnSave = document.querySelector('.button-primary');
+const btnCancel = document.querySelector('.button-disabled');
 
-//? variables for notification bell
-let notificationDiv = document.getElementById('notifications');
-const bellDiv = document.getElementById('bellMenu');
+
 
 
 //*notification drop down */
 document.getElementById('notifications').addEventListener('click',(e) => {
+    if(bellDiv.style.opacity == 1){
+        bellDiv.style.opacity = 0;
+    } else {
     bellDiv.innerHTML = `
     <div class="menuList">
         <ul>
@@ -32,14 +42,9 @@ document.getElementById('notifications').addEventListener('click',(e) => {
     </div>
     `;
     bellDiv.style.opacity = 1;
-
-});
-
-document.getElementById('notifications').addEventListener('click',(e)=> {
-    if(bellDiv.contains("menuList")){
-        bellDiv.style.opacity = 0;
     }
-})
+    
+});
 
 
 //********************//
@@ -67,6 +72,7 @@ function removeData(chart) {
 //********************//
 //*creates Alertbanner and inserts in element// 
 //*********************//
+
 alertbanner.innerHTML = `
 <div class="alert-banner">
 <p> <strong> Alert: </strong> You have <strong>6</strong> overdue tasks to complete!</p>
@@ -77,6 +83,7 @@ alertbanner.innerHTML = `
 //*******************//
 //*closes banner when clicked//
 //*********************//
+
 alertbanner.addEventListener('click', e =>{
     const div = e.target;
     if(div.classList.contains("alert-banner-close")){
@@ -238,6 +245,7 @@ let monthlyTraff = {
 //*****************//
 //*event listeners for line-graph//
 //*****************//
+
 hourly.addEventListener('click', (e) =>{
     let trafficChart = new Chart(trafficCanvas,{
         type: 'line',
@@ -271,11 +279,9 @@ monthly.addEventListener('click', (e) =>{
     addData(trafficMonthly, monthlyTraff.labels, monthlyTraff.dataset[0].data);
 });
 
-
-
-
+//*************//
 //* bar graph//
-
+//*************//
 let dailyData = {
     labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     datasets: [
@@ -306,8 +312,10 @@ let dailyChart = new Chart(dailyCanvas,{
     options: dailyOptions
 });
 
-
+//*************//
 //*Donut-graph//
+//*************//
+
 let mobileData = {
     labels: ['Phones', 'Tablets', 'Desktop',],
     datasets: [{
@@ -339,15 +347,10 @@ let mobileChart = new Chart(mobileCanvas, {
 
 
 
-//* Messaging Section 
-const div = document.getElementById('searchDiv');
-const userInput = document.getElementById('userField');
-const message = document.getElementById('messageField');
-const send = document.getElementById('send');
+//*************//
+//*  EventListener Ensures Fields are filled out
+//*************//
 
-
-
-//* Ensures Fields are filled out
 send.addEventListener('click', ()=>{
     if(userInput.value === "" && message.value === ""){
         alert("Search field and Message field are empty"); //!alert
@@ -361,40 +364,47 @@ send.addEventListener('click', ()=>{
 });
 
 //******************//
-//* auto-complete*//
+//* auto-complete function and eventListener*//
 //******************//
-let searchNames = ["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
-let ul = document.createElement('ul');
-let li = document.createElement('li');
-div.appendChild(ul);
-userInput.addEventListener('keyup', (e)=>{
-   let validNames = searchNames.includes(e.target);
-   li += validNames;
-   
+//?creates a auto complete function
+const searchNames = (e) =>{
+    const names = e.target.value.toLowerCase();
+    if(userInput.value == ""){
+        namesDiv.style.display= 'none';
+    } else {
+        namesDiv.innerHTML =   `
+        <div class="search-names">
+            <ul>
+                <li>
+                </li>
+            </ul>    
+            <p> ${names} </p>
+        </div>
+        `
+        namesDiv.style.display = 'block';
+    }
+}
 
-   
-   
-
-});
+userInput.addEventListener('keyup', searchNames);
 
 //******************//
 //*  local storage *//
 //******************//
-const settingSwitches = document.getElementById('switches');
-const saveTimezone = document.getElementById('timezone');
-const btnSave = document.getElementById('saveBtn');
-const btnCancel = document.querySelector('.button-disabled');
 
 //? Adds local storage
 btnSave.addEventListener('click', ()=>{
-    if(settingSwitches){
-        localStorage.setItem('switch', settingSwitches.value);
-    } if(saveTimezone){
+    if (switchOne){
+        localStorage.setItem('switch-one', switchOne.checked);
+    } if (switchTwo){
+        localStorage.setItem('switch-two', switchTwo.checked);
+    } if (saveTimezone){
         localStorage.setItem('tzone', saveTimezone.value);
-    }
+    } 
+    
 });
 //? removes local storage
 btnCancel.addEventListener('click', (e)=>{
-    localStorage.removeItem('switch');
+    localStorage.removeItem('switch-one');
+    localStorage.removeItem('switch-two');
     localStorage.removeItem('tzone');
 })

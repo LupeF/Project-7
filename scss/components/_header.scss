@@ -24,7 +24,7 @@ header{
     .svg-container{
         position: relative;
         &:hover{
-            animation: bell .5s ease-in-out  backwards;
+            animation:  bell .5s ease-in-out  backwards;
         }
         .green-dot{
             height: 5px;
@@ -51,12 +51,25 @@ header{
         top: 50px;
         left: -91px;
         background-color: darkblue;
-        padding: 1em;
         opacity: 0;
+        z-index: 1;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .5s ease-in;
         a {
             list-style-type: none;
             text-decoration: none;
             padding: 6px;
+            
+            &:hover{
+                color: lime;
+                ;
+            }
+        }
+        
+        .menuList{
+            padding: 1.5em;
+            margin-right: 3em;
         }
 
         
@@ -82,3 +95,5 @@ header{
         
     }
 }
+
+

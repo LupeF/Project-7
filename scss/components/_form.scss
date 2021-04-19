@@ -18,6 +18,15 @@
         box-shadow: 0 2px 2px black;
         width: 100%;
     }
+    .search-names{
+        background-color: darkblue;
+        color: white;
+        height: 3rem;
+        font-size: larger;
+       
+        
+    }
+
     .widget-container{
         display: flex;
         flex-direction: column;
@@ -61,8 +70,7 @@
         width:50%;
         color:white;
         background-color: #7477bf;
-        // margin-bottom: .2em;
-        // margin-top: 7px;
+        
         
     }
     .button-disabled{

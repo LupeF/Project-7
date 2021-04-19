@@ -402,13 +402,23 @@ header #bellMenu {
   top: 50px;
   left: -91px;
   background-color: darkblue;
-  padding: 1em;
   opacity: 0;
+  z-index: 1;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in;
 }
 header #bellMenu a {
   list-style-type: none;
   text-decoration: none;
   padding: 6px;
+}
+header #bellMenu a:hover {
+  color: lime;
+}
+header #bellMenu .menuList {
+  padding: 1.5em;
+  margin-right: 3em;
 }
 header .img-container {
   border-left: 1px solid black;
@@ -464,6 +474,9 @@ nav .flex-img {
   align-items: center;
   padding: 0 1em;
   position: relative;
+}
+.main-header input {
+  outline: none;
 }
 .main-header .fa-search {
   position: absolute;
@@ -612,6 +625,12 @@ nav .flex-img {
   height: 3em;
   box-shadow: 0 2px 2px black;
   width: 100%;
+}
+.message .search-names, .settings .search-names {
+  background-color: darkblue;
+  color: white;
+  height: 3rem;
+  font-size: larger;
 }
 .message .widget-container, .settings .widget-container {
   display: flex;
