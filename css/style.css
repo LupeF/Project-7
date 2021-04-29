@@ -628,9 +628,13 @@ nav .flex-img {
 }
 .message .search-names, .settings .search-names {
   background-color: darkblue;
-  color: white;
   height: 3rem;
   font-size: larger;
+}
+.message .search-names a, .settings .search-names a {
+  color: white;
+  list-style-type: none;
+  text-decoration: none;
 }
 .message .widget-container, .settings .widget-container {
   display: flex;

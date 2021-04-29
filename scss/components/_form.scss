@@ -18,11 +18,17 @@
         box-shadow: 0 2px 2px black;
         width: 100%;
     }
-    .search-names{
+    .search-names {
         background-color: darkblue;
-        color: white;
+        // color: white;
         height: 3rem;
         font-size: larger;
+        a{
+            color: white;
+            list-style-type: none;
+            text-decoration: none;
+            
+        }
        
         
     }
