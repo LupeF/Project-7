@@ -369,26 +369,27 @@ send.addEventListener('click', ()=>{
 //?creates a auto complete function
 const searchNames = (e) =>{
     const value = e.target.value.toLowerCase();
-    let p = document.querySelectorAll(".members-text  p");
-
-    for(let i = 0; i < p.length; i++){
-        let name = p[i];
-        if(userInput.value == ""){
-            namesDiv.style.display= 'none';
-        } else if(userInput.value.includes(name)){ 
-            
-                namesDiv.innerHTML =  `
-                <div class="search-names">    
-                    <ul>
-                        <a href=""><li> ${name}</li></a>
-                    </ul>
-                </div>
-                `
-            
-            
-            namesDiv.style.display = 'block';
-        }
+    // let pContainer = document.querySelectorAll(".members-container");
+    // let p = pContainer.querySelectorAll(".members-text  p");
+    let listNames = ["Victoria Chambers","Dale Byrd","Dawn Wood", "Dan Oliver"];
+    if(userInput.value == ""){
+        namesDiv.style.display= 'none';
+    }else{ 
+        
+            namesDiv.innerHTML =  `
+            <div class="search-names">    
+                <p>${listNames.includes(p)}</p>
+            </div>
+            `
+        
+        
+        namesDiv.style.display = 'block';
     }
+
+    
+        
+        
+    
 
         
     

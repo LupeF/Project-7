@@ -3,27 +3,30 @@ nav{
     background-color:  #302e9e;
     grid-area: nav;
     color: white;
-    a {
-      color: white;
-      &:hover{
-          animation: bell .3s ease-in-out   ;
-          border-bottom: solid 5px lime;  //* works on border*//
-      }
-    }
-    img{
-        height: 30px;
-        
-    }
     .flex-img{
         padding-top: 1em;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
+        max-width: 300px;
         @media(min-width:768px){
             display: flex;
             flex-direction: column;
             height: 25%;
-
+        }
+        a {
+            color: white;
+            padding-left: 2em;
+            &:hover{
+                animation: bell .3s ease-in-out   ;
+                border-bottom: solid 5px lime;  //* works on border*//
+            }
+            img{
+                height: 30px;  
+            }
         }
     }
+    
+    
+    
 }

@@ -1,28 +1,19 @@
-
- .traffic-header{
-     display: grid;
-     grid-template-columns: 150px 2fr;
-     margin-top: 2em;
-     grid-area: main
-     ;
-     .traffic-nav{
-         display: flex;
-         justify-content: space-evenly;
-         list-style-type: none;
-         align-items: center;
-
-         li {
-             padding: 5PX;
-             &:hover{
+.traffic-header{
+    margin-top: 1em;
+    grid-area: main;
+    .traffic-nav{
+        display: flex;
+        list-style-type: none;
+        padding-left: 16px;
+        li {
+            padding: 5px;
+            &:hover{
                 border: solid 1px black;
                 background-color: lime;
                 border-radius: 20px;
                 padding: 8px;
             }
-         }
-         
- 
-     }
-     
+        }
+    }
  }
  
