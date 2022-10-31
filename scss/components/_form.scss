@@ -1,8 +1,10 @@
-.message,.settings{
+.message,
+.settings{
     background-color: whitesmoke;
     padding: 1em;
     margin: 1em 1em 0 1em;
     border-radius: 5px;
+    max-width: 300px;
     @media(min-width:768px){
         border: solid 1px black;
         font-size: smaller;
@@ -13,7 +15,7 @@
             padding-left: 0;
         }
     }
-    input{
+    input {
         height: 3em;
         box-shadow: 0 2px 2px black;
         width: 100%;
@@ -27,12 +29,8 @@
             color: white;
             list-style-type: none;
             text-decoration: none;
-            
         }
-       
-        
     }
-
     .widget-container{
         display: flex;
         flex-direction: column;
@@ -53,6 +51,34 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 1em;
+        input {
+            -webkit-appearance: none;
+            position: relative;
+            width: 70px;
+            height:40px;
+            border-radius: 25px;
+            background-color: #ccc;
+            transition: backgroud .3s;
+            outline: none;
+            cursor: pointer;
+            &::after{
+                position: absolute;
+                content: '';
+                height: 70%;
+                width: 40%;
+                top: 15%;
+                left: 10%;
+                border-radius:25px;
+                background-color: white;
+                transition: left .3s;
+            }
+            &:checked{
+                background-color: limegreen;
+            }
+            &:checked:after{
+                left: 50%;
+            }        
+        }
     }
 }
 .switch-light.switch-candy > span{
@@ -75,9 +101,7 @@
         height: 3em;
         width:50%;
         color:white;
-        background-color: #7477bf;
-        
-        
+        background-color: #7477bf;   
     }
     .button-disabled{
         margin-left: 10px;

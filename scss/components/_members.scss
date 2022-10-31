@@ -9,7 +9,7 @@ section h3{
   grid-row-gap: 1em;
   align-items: center;
   padding: 1em;
-  max-width: 300px;
+  max-width: 320px;
   @media(min-width: 768px){
     border: solid black 1px; 
   }
@@ -20,14 +20,15 @@ section h3{
   box-shadow: 5px 3px 5px black;
   width: 95%;
   text-align: center;
-  // display: flex;
-  // align-items: center;
-  font-size: smaller;
+  font-size: x-small;
   border-radius: 10px;
   padding: 1em;
   position: relative;
   .members-text{
     padding-left: .5em;
+    & ~ p {
+      display: none;
+    }
   }
   @media(min-width:768px){
     background-color: white;
