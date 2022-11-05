@@ -2,9 +2,7 @@
 .settings{
     background-color: whitesmoke;
     padding: 1em;
-    margin: 1em 1em 0 1em;
-    border-radius: 5px;
-    max-width: 300px;
+    max-width: 325px;
     @media(min-width:768px){
         border: solid 1px black;
         font-size: smaller;
@@ -15,6 +13,9 @@
             padding-left: 0;
         }
     }
+    h3{
+        padding-left: 0;
+    }
     input {
         height: 3em;
         box-shadow: 0 2px 2px black;
@@ -22,7 +23,6 @@
     }
     .search-names {
         background-color: darkblue;
-        // color: white;
         height: 3rem;
         font-size: larger;
         a{
@@ -42,11 +42,10 @@
             height: 3em;
             color:white;
             background-color: #7477bf;
-            // margin-bottom: 1em;
             margin-top: 8px;
         }  
     }
-    .toggle-flex{
+    .toggle-container{
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -54,18 +53,26 @@
         input {
             -webkit-appearance: none;
             position: relative;
-            width: 70px;
+            width: 100px;
             height:40px;
             border-radius: 25px;
             background-color: #ccc;
             transition: backgroud .3s;
             outline: none;
             cursor: pointer;
+            &::before{
+                position: absolute;
+                content: 'Off';
+                left: 60px;
+                top: 10px;
+                color: white;
+                transition: left .3s;
+            }
             &::after{
                 position: absolute;
                 content: '';
                 height: 70%;
-                width: 40%;
+                width: 30%;
                 top: 15%;
                 left: 10%;
                 border-radius:25px;
@@ -73,8 +80,12 @@
                 transition: left .3s;
             }
             &:checked{
-                background-color: limegreen;
+                background-color: #7477bf;
             }
+            &:checked::before{
+                left: 15%;
+                content: 'On';
+            } 
             &:checked:after{
                 left: 50%;
             }        
@@ -90,6 +101,16 @@
     height: 3em;
     margin-top: 1em;
     box-shadow: 0 2px 2px black;
+    position: relative;
+    
+}
+.triangle{
+    position: relative;
+    bottom: 33px;
+    left: 260px;
+    // height: 100px;
+    width: 50px;
+    color: #7477bf;
 }
 .switch-light{
     width: 50%;  

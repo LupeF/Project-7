@@ -362,7 +362,7 @@ header .wrap {
   display: flex;
   justify-content: space-between;
 }
-header h2 {
+header h3 {
   font-size: 24px;
 }
 header span {
@@ -611,9 +611,7 @@ nav .flex-img a img {
 .settings {
   background-color: whitesmoke;
   padding: 1em;
-  margin: 1em 1em 0 1em;
-  border-radius: 5px;
-  max-width: 300px;
+  max-width: 325px;
 }
 @media (min-width: 768px) {
   .message,
@@ -628,6 +626,10 @@ nav .flex-img a img {
 .settings h3 {
     padding-left: 0;
   }
+}
+.message h3,
+.settings h3 {
+  padding-left: 0;
 }
 .message input,
 .settings input {
@@ -664,18 +666,18 @@ nav .flex-img a img {
   background-color: #7477bf;
   margin-top: 8px;
 }
-.message .toggle-flex,
-.settings .toggle-flex {
+.message .toggle-container,
+.settings .toggle-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1em;
 }
-.message .toggle-flex input,
-.settings .toggle-flex input {
+.message .toggle-container input,
+.settings .toggle-container input {
   -webkit-appearance: none;
   position: relative;
-  width: 70px;
+  width: 100px;
   height: 40px;
   border-radius: 25px;
   background-color: #ccc;
@@ -683,24 +685,38 @@ nav .flex-img a img {
   outline: none;
   cursor: pointer;
 }
-.message .toggle-flex input::after,
-.settings .toggle-flex input::after {
+.message .toggle-container input::before,
+.settings .toggle-container input::before {
+  position: absolute;
+  content: "Off";
+  left: 60px;
+  top: 10px;
+  color: white;
+  transition: left 0.3s;
+}
+.message .toggle-container input::after,
+.settings .toggle-container input::after {
   position: absolute;
   content: "";
   height: 70%;
-  width: 40%;
+  width: 30%;
   top: 15%;
   left: 10%;
   border-radius: 25px;
   background-color: white;
   transition: left 0.3s;
 }
-.message .toggle-flex input:checked,
-.settings .toggle-flex input:checked {
-  background-color: limegreen;
+.message .toggle-container input:checked,
+.settings .toggle-container input:checked {
+  background-color: #7477bf;
 }
-.message .toggle-flex input:checked:after,
-.settings .toggle-flex input:checked:after {
+.message .toggle-container input:checked::before,
+.settings .toggle-container input:checked::before {
+  left: 15%;
+  content: "On";
+}
+.message .toggle-container input:checked:after,
+.settings .toggle-container input:checked:after {
   left: 50%;
 }
 
@@ -714,6 +730,15 @@ nav .flex-img a img {
   height: 3em;
   margin-top: 1em;
   box-shadow: 0 2px 2px black;
+  position: relative;
+}
+
+.triangle {
+  position: relative;
+  bottom: 33px;
+  left: 260px;
+  width: 50px;
+  color: #7477bf;
 }
 
 .switch-light {
@@ -761,6 +786,12 @@ canvas {
 .grid-container .main {
   display: grid;
 }
+.grid-container .main section {
+  border-bottom: solid 1px;
+}
+.grid-container .main section:first-of-type {
+  border-bottom: none;
+}
 @media (min-width: 768px) {
   .grid-container .main {
     grid-template-columns: 50%;
@@ -790,18 +821,13 @@ canvas {
     width: 45vw;
   }
 }
-section h3 {
+section h5 {
   padding-left: 1em;
 }
 
 .members,
 .activity {
-  display: grid;
-  grid-template-rows: 50px auto;
-  grid-template-columns: auto;
-  grid-row-gap: 1em;
-  align-items: center;
-  padding: 1em;
+  background-color: whitesmoke;
   max-width: 320px;
 }
 @media (min-width: 768px) {
@@ -812,15 +838,15 @@ section h3 {
 }
 
 .members-container {
-  background-color: whitesmoke;
   margin: 0 1em;
-  box-shadow: 5px 3px 5px black;
-  width: 95%;
+  border-bottom: solid 1px;
   text-align: center;
   font-size: x-small;
-  border-radius: 10px;
-  padding: 1em;
+  padding: 2em 0;
   position: relative;
+}
+.members-container:last-child {
+  border-bottom: none;
 }
 .members-container .members-text {
   padding-left: 0.5em;

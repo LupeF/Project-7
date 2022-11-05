@@ -1,28 +1,23 @@
-section h3{
+section h5{
   padding-left: 1em;
 }
 .members,
 .activity{
-  display: grid;
-  grid-template-rows: 50px auto;
-  grid-template-columns: auto;
-  grid-row-gap: 1em;
-  align-items: center;
-  padding: 1em;
+  background-color: whitesmoke;
   max-width: 320px;
   @media(min-width: 768px){
     border: solid black 1px; 
   }
 }
 .members-container{
-  background-color: whitesmoke;
   margin: 0 1em;
-  box-shadow: 5px 3px 5px black;
-  width: 95%;
+  border-bottom: solid 1px;
+  &:last-child{
+    border-bottom: none;
+  }
   text-align: center;
   font-size: x-small;
-  border-radius: 10px;
-  padding: 1em;
+  padding: 2em 0;
   position: relative;
   .members-text{
     padding-left: .5em;

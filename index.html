@@ -14,7 +14,7 @@
 <body class="grid-container"> 
   <header>
     <div class="wrap">
-      <h2>Web<span>App</span>&trade;</h2>
+      <h3>Web<span>App</span>&trade;</h3>
         <div class="flex-container">
             <!-- Bell icon --> 
             <div id="notifications" class="svg-container">
@@ -63,7 +63,7 @@
         </section>
         <section class="traffic">
             <div class="traffic-header">
-                <h3>TRAFFIC</h3>
+                <h5>TRAFFIC</h5>
                 <div>
                     <ul class="traffic-nav">
                         <li class="traffic-nav-link" id="hourly">Hourly</li>
@@ -80,7 +80,7 @@
         </section>
                 <!-- bar-graph -->
         <section class="daily">
-            <h3>DAILY TRAFFIC</h3>
+            <h5>DAILY TRAFFIC</h5>
             <div class="widget-container-half">
                 <!-- element bar graph will attach to  -->
                 <canvas id="daily-chart"></canvas>
@@ -88,7 +88,7 @@
         </section>
                 <!-- Donut graph  -->
         <section class="mobile">
-            <h3>MOBILE USERS</h3>
+            <h5>MOBILE USERS</h5>
             <div class="widget-container-half">
                 <!-- element bar graph will attach to  -->
             <canvas id="mobile-users"></canvas>
@@ -96,7 +96,7 @@
         </section>
             <!-- social media -->
         <section class="social">
-            <h3>SOCIAL STATS</h3>
+            <h5>SOCIAL STATS</h5>
             <div class="social-container twitter">
                 <div class="social-image">
                     <!-- twitter svg  -->
@@ -135,7 +135,7 @@
             </div>
         </section>
         <section class="members">
-            <h3>NEW MEMBERS</h3>
+            <h5>NEW MEMBERS</h5>
             <div class="members-container">
                 <img src="images/member-1.jpg" alt="Picture of a new member" class="profile-image">
                 <div class="members-text">
@@ -170,7 +170,7 @@
             </div>
         </section>
         <section class="activity">
-            <h3>RECENT ACTIVITY</h3>
+            <h5>RECENT ACTIVITY</h5>
             <div class="members-container">
                 <img src="images/member-1.jpg" alt="Picture of a member" class="profile-image">
                 <div class="members-text">
@@ -218,21 +218,23 @@
         <section class="settings">
             <!-- custom CSS toggle code  -->
             <h3>SETTINGS</h3>
-            <div class="toggle-flex">
+            <div class="toggle-container">
                 <p>Send Email Notifications</p>
                 <input type="checkbox">
             </div>
             <!-- custom CSS toggle code  -->
-            <div class="toggle-flex">
-            <p>Set Profile to Public</p>
-            <input type="checkbox">
+            <div class="toggle-container">
+                <p>Set Profile to Public</p>
+                <input type="checkbox">
             </div>
             <select class="form-field" id="timezone">
                 <option disabled selected>Select Timezone</option>
                 <option>Western</option>
                 <option>Eastern</option>
                 <option>Central</option>
+               
             </select>
+            <i class="triangle fa-2xl fa-sharp fa-solid fa-caret-down"></i>
             <div class="settings-button">
                 <button class="button-primary" id="saveBtn">SAVE</button>
                 <button class="button-disabled">CANCEL</button>
@@ -240,6 +242,7 @@
         </section>
     </main>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://kit.fontawesome.com/c121f500ec.js" crossorigin="anonymous"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
