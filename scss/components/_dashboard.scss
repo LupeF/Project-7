@@ -1,6 +1,6 @@
 .main-header{
-    display: grid;
-    grid-template-columns: 140px auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0 1em;
     position: relative;
@@ -11,6 +11,7 @@
     .main-header-search input{
         outline: none;
         height: 4em;
+        max-width: 185px;
     }
     .fa-search{
         position: absolute;

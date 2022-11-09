@@ -354,7 +354,6 @@ button, textarea, select {
 header {
   color: white;
   padding: 0.5em 1em;
-  display: flex;
   background-color: #7477bf;
   grid-area: header;
 }
@@ -372,7 +371,10 @@ header .flex-container {
   display: flex;
   align-items: center;
   position: relative;
-  margin-left: 2.5rem;
+  margin-right: 1em;
+}
+header .flex-container p {
+  font-size: small;
 }
 header .svg-container {
   position: relative;
@@ -428,7 +430,7 @@ header .img-container {
 header img {
   border-radius: 360px;
   height: 30px;
-  padding-left: 8px;
+  padding: 0 6px;
 }
 
 @keyframes bell {
@@ -465,15 +467,14 @@ nav .flex-img a {
 }
 nav .flex-img a:hover {
   animation: bell 0.3s ease-in-out;
-  border-bottom: solid 5px lime;
 }
 nav .flex-img a img {
   height: 30px;
 }
 
 .main-header {
-  display: grid;
-  grid-template-columns: 140px auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0 1em;
   position: relative;
@@ -485,6 +486,7 @@ nav .flex-img a img {
 .main-header .main-header-search input {
   outline: none;
   height: 4em;
+  max-width: 185px;
 }
 .main-header .fa-search {
   position: absolute;
@@ -506,71 +508,18 @@ nav .flex-img a img {
   border-radius: 5px;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-size: x-small;
 }
 
-.social-container {
-  background-color: whitesmoke;
-  border: solid 1px black;
-  border-radius: 10px;
-  font-size: smaller;
-  box-shadow: 5px 3px 5px black;
-  color: #514efa;
-  margin: 1em;
-  display: flex;
-  align-items: center;
-  max-width: 290px;
-  padding: 1em 2em;
+.social {
+  max-width: 320px;
 }
-@media (min-width: 700px) {
-  .social-container {
-    justify-content: center;
+@media (min-width: 325px) {
+  .social {
+    max-width: initial;
   }
 }
-@media (min-width: 768px) {
-  .social-container {
-    display: flex;
-    justify-content: center;
-  }
-}
-.social-container .social-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  background-color: #514efa;
-  margin-right: 1em;
-}
-.social-container .social-image .facebook {
-  margin-top: 11px;
-  width: 60px;
-  height: 50px;
-}
-.social-container .social-image svg {
-  width: 30px;
-  fill: white;
-}
-.social-container .social-text p {
-  margin-bottom: 0;
-}
-@media (min-width: 768px) {
-  .social-container .social-text p {
-    margin-left: 2em;
-    grid-template-rows: 0px;
-  }
-}
-.social-container .stats {
-  color: black;
-  font-size: x-large;
-  padding-top: 8px;
-}
-.social-container .stats p {
-  margin-top: 0;
-}
-
 @media (min-width: 768px) {
   .social {
     display: grid;
@@ -586,6 +535,64 @@ nav .flex-img a img {
   .social .google {
     grid-column: 3/4;
   }
+}
+.social .social-container {
+  background-color: whitesmoke;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+  font-size: smaller;
+  color: #514efa;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  padding: 1em 3em;
+}
+@media (min-width: 700px) {
+  .social .social-container {
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) {
+  .social .social-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+.social .social-container .social-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #514efa;
+  margin-right: 1em;
+}
+.social .social-container .social-image .facebook {
+  margin-top: 11px;
+  width: 60px;
+  height: 50px;
+}
+.social .social-container .social-image svg {
+  width: 30px;
+  fill: white;
+}
+.social .social-container .social-text p {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .social .social-container .social-text p {
+    margin-left: 2em;
+    grid-template-rows: 0px;
+  }
+}
+.social .social-container .stats {
+  color: black;
+  font-size: x-large;
+  padding-top: 8px;
+}
+.social .social-container .stats p {
+  margin-top: 0;
 }
 
 .traffic-header {
@@ -612,6 +619,12 @@ nav .flex-img a img {
   background-color: whitesmoke;
   padding: 1em;
   max-width: 325px;
+}
+@media (min-width: 330px) {
+  .message,
+.settings {
+    max-width: initial;
+  }
 }
 @media (min-width: 768px) {
   .message,
@@ -717,7 +730,7 @@ nav .flex-img a img {
 }
 .message .toggle-container input:checked:after,
 .settings .toggle-container input:checked:after {
-  left: 50%;
+  left: 60%;
 }
 
 .switch-light.switch-candy > span {
@@ -735,9 +748,8 @@ nav .flex-img a img {
 
 .triangle {
   position: relative;
-  bottom: 33px;
-  left: 260px;
-  width: 50px;
+  bottom: 35px;
+  left: 250px;
   color: #7477bf;
 }
 
@@ -828,7 +840,6 @@ section h5 {
 .members,
 .activity {
   background-color: whitesmoke;
-  max-width: 320px;
 }
 @media (min-width: 768px) {
   .members,

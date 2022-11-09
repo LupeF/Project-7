@@ -1,7 +1,7 @@
 header{
     color: white;
     padding: .5em 1em;
-    display: flex;
+    // display: flex;
     background-color: #7477bf;
     grid-area: header;
     .wrap{
@@ -18,7 +18,10 @@ header{
         display: flex;
         align-items: center;
         position: relative;
-        margin-left: 2.5rem;
+        margin-right: 1em;
+        p {
+            font-size: small;
+        }
     }
     .svg-container{
         position: relative;
@@ -75,7 +78,7 @@ header{
     img{
         border-radius: 360px;
         height: 30px; 
-        padding-left: 8px;
+        padding: 0 6px;
     }
 }
 @keyframes bell {

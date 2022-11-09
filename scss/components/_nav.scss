@@ -19,14 +19,11 @@ nav{
             padding-left: 2em;
             &:hover{
                 animation: bell .3s ease-in-out   ;
-                border-bottom: solid 5px lime;  //* works on border*//
+                // border-bottom: solid 5px lime;  //* works on border*//
             }
             img{
                 height: 30px;  
             }
         }
-    }
-    
-    
-    
+    } 
 }

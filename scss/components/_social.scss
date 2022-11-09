@@ -1,59 +1,8 @@
-.social-container{
-    background-color: whitesmoke;
-    border: solid 1px black;
-    border-radius: 10px;
-    font-size: smaller;
-    box-shadow: 5px 3px 5px black;
-    color: #514efa;
-    margin: 1em;
-    display: flex;
-    align-items: center;
-    max-width: 290px;
-    padding: 1em 2em;
-    @media(min-width:700px) {
-        justify-content: center;
-    }
-    @media(min-width:768px){
-        display: flex;
-        justify-content: center;
-    }
-    .social-image{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60px;
-        height: 60px;
-        border-radius:10px;
-        background-color: #514efa;
-        margin-right: 1em;
-        .facebook{
-            margin-top: 11px;
-            width: 60px;
-            height: 50px;
-        }
-        svg{
-            width: 30px;
-            fill: white;
-        }  
-    }
-    .social-text p {
-        margin-bottom: 0;
-        @media(min-width:768px){
-            margin-left: 2em;
-            grid-template-rows: 0px;
-        }
-        
-    }
-    .stats{
-        color: black ;
-        font-size: x-large;
-        padding-top: 8px;
-        p{
-            margin-top: 0;
-        } 
-    }
-}
 .social{
+    max-width: 320px;
+    @media(min-width:325px){
+        max-width: initial;
+    }
     @media(min-width:768px){
         display: grid;
         // grid-template-columns: 2fr 2fr 2fr;
@@ -69,6 +18,61 @@
             grid-column: 3 / 4;
         }
     }
+    .social-container{
+        background-color: whitesmoke;
+        border: solid 2px lightgray ;
+        border-radius: 10px;
+        font-size: smaller;
+        // box-shadow: 5px 3px 5px black;
+        color: #514efa;
+        margin: 1em;
+        display: flex;
+        align-items: center;
+        padding: 1em 3em;
+        @media(min-width:700px) {
+            justify-content: center;
+        }
+        @media(min-width:768px){
+            display: flex;
+            justify-content: center;
+        }
+        .social-image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius:10px;
+            background-color: #514efa;
+            margin-right: 1em;
+            .facebook{
+                margin-top: 11px;
+                width: 60px;
+                height: 50px;
+            }
+            svg{
+                width: 30px;
+                fill: white;
+            }  
+        }
+        .social-text p {
+            margin-bottom: 0;
+            @media(min-width:768px){
+                margin-left: 2em;
+                grid-template-rows: 0px;
+            }  
+        }
+        .stats{
+            color: black ;
+            font-size: x-large;
+            padding-top: 8px;
+            p{
+                margin-top: 0;
+            } 
+        }
+    }
 }
+
+
 
 
