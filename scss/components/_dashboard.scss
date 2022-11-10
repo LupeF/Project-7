@@ -2,25 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1em;
-    position: relative;
+    @media(min-width:768px){
+        padding-left: 1.3em;
+    }
     h2{
         font-size: 20px;
-        margin-right: 1.5rem;
+        margin: 0 1em;
     }
-    .main-header-search input{
-        outline: none;
-        height: 4em;
-        max-width: 185px;
-    }
-    .fa-search{
-        position: absolute;
-        top: 23px;
-        right: 35px;
-        cursor: pointer; 
-    }
-    @media(min-width:768px){
-        padding: 0 1.3em;
-    }
+    .gray-box {
+        background-color: rgba(237, 234, 234, 0.988);
+        height: 3.4em;
+        width: 100%;
+        border-left: 2px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }  
 }
 

@@ -29,6 +29,18 @@ canvas{
         }
         @media(min-width: 768px){
             grid-template-columns: 50%;
+            .dash, .social, .traffic, .members, .activity, .message, .settings{
+                grid-column: 1 / span 2;
+            }
+             .daily{
+                grid-column: 1/ span 1;   
+            }
+            .mobile{
+                grid-column: 2 / span 1;
+            }
+        }
+        @media(min-width: 1024px){
+            grid-template-columns: 50%;
             .dash, .social, .traffic{
                 grid-column: 1 / span 2;
             }

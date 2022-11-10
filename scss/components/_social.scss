@@ -23,18 +23,23 @@
         border: solid 2px lightgray ;
         border-radius: 10px;
         font-size: smaller;
-        // box-shadow: 5px 3px 5px black;
         color: #514efa;
         margin: 1em;
         display: flex;
         align-items: center;
         padding: 1em 3em;
-        @media(min-width:700px) {
-            justify-content: center;
+        @media(min-width:550px) {
+            padding-left: 7em;
         }
         @media(min-width:768px){
             display: flex;
-            justify-content: center;
+            // justify-content: center;
+            padding:initial;
+        }
+        @media(min-width:1024px){
+            display: flex;
+            justify-content: flex-start;
+            padding:2em;
         }
         .social-image{
             display: flex;
@@ -58,7 +63,7 @@
         .social-text p {
             margin-bottom: 0;
             @media(min-width:768px){
-                margin-left: 2em;
+                // margin-left: 2em;
                 grid-template-rows: 0px;
             }  
         }

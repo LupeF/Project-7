@@ -8,18 +8,18 @@ nav{
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 300px;
         @media(min-width:768px){
             display: flex;
             flex-direction: column;
-            height: 25%;
+            justify-content: space-between;
+            height: 15%;
+            padding-right: 2em;
         }
         a {
             color: white;
             padding-left: 2em;
             &:hover{
-                animation: bell .3s ease-in-out   ;
-                // border-bottom: solid 5px lime;  //* works on border*//
+                animation: bell .3s ease-in-out;
             }
             img{
                 height: 30px;  
