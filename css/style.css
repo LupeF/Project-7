@@ -559,7 +559,7 @@ nav .flex-img a img {
 @media (min-width: 768px) {
   .social .social-container {
     display: flex;
-    padding: initial;
+    padding: 2em;
   }
 }
 @media (min-width: 1024px) {

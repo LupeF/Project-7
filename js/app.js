@@ -366,38 +366,18 @@ send.addEventListener('click', ()=>{
 //******************//
 //* auto-complete function and eventListener*//
 //******************//
+// let names = document.querySelectorAll('.members-text p');
 //?creates a auto complete function
-const searchNames = (e) =>{
-    const value = e.target.value.toLowerCase();
-    // let pContainer = document.querySelectorAll(".members-container");
-    // let p = pContainer.querySelectorAll(".members-text  p");
-    let listNames = ["Victoria Chambers","Dale Byrd","Dawn Wood", "Dan Oliver"];
-    if(userInput.value == ""){
-        namesDiv.style.display= 'none';
-    }else{ 
-        
-            namesDiv.innerHTML =  `
-            <div class="search-names">    
-                <p>${listNames.includes(p)}</p>
-            </div>
-            `
-        
-        
-        namesDiv.style.display = 'block';
+userInput.addEventListener('keyup',(e)=>{
+    let search = e.target.value.toLowerCase();
+    let names = document.querySelectorAll('.members-text p');
+    for(let i=0; i<names.length; ++i){
+        names = names[i];
+        if(search === names[i]){
+            names.style.display = 'block';
+        }
     }
-
-    
-        
-        
-    
-
-        
-    
-    
-}
-
-userInput.addEventListener('keyup', searchNames);
-
+});
 //******************//
 //*  local storage *//
 //******************//
@@ -410,12 +390,11 @@ btnSave.addEventListener('click', ()=>{
         localStorage.setItem('switch-two', switchTwo.checked);
     } if (saveTimezone){
         localStorage.setItem('tzone', saveTimezone.value);
-    } 
-    
+    }    
 });
 //? removes local storage
 btnCancel.addEventListener('click', (e)=>{
     localStorage.removeItem('switch-one');
     localStorage.removeItem('switch-two');
     localStorage.removeItem('tzone');
-})
+});
