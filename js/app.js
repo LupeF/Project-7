@@ -12,7 +12,7 @@ let daily = document.getElementById('daily');
 let weekly = document.getElementById('weekly');
 let monthly = document.getElementById('monthly');
 //? variable for auto-complete //
-let namesDiv = document.getElementById('namesList');
+let namesDiv = document.querySelector('.names-list');
 //? variables for messaage form //
 const div = document.getElementById('searchDiv');
 const userInput = document.getElementById('userField');
@@ -345,12 +345,9 @@ let mobileChart = new Chart(mobileCanvas, {
     options: mobileOptions
 });
 
-
-
-//*************//
-//*  EventListener Ensures Fields are filled out
-//*************//
-
+//********************************************//
+//*EventListener Ensures Fields are filled out
+//******************************************//
 send.addEventListener('click', ()=>{
     if(userInput.value === "" && message.value === ""){
         alert("Search field and Message field are empty"); //!alert
@@ -363,25 +360,28 @@ send.addEventListener('click', ()=>{
     }
 });
 
-//******************//
+//********************************************//
 //* auto-complete function and eventListener*//
-//******************//
-// let names = document.querySelectorAll('.members-text p');
+//******************************************//
 //?creates a auto complete function
 userInput.addEventListener('keyup',(e)=>{
     let search = e.target.value.toLowerCase();
-    let names = document.querySelectorAll('.members-text p');
-    for(let i=0; i<names.length; ++i){
-        names = names[i];
-        if(search === names[i]){
-            names.style.display = 'block';
-        }
+    const names = document.querySelectorAll('.members-text p');
+    for(let i=0; i<names.length; i++){ //Loops through array and stores in variable
+        let name = names[i].innerHTML.toLowerCase();
+        if(name.includes(search)){
+            namesDiv.style.display = "block";
+            namesDiv.innerHTML = `<p>${name}</p>`;
+        } 
+    }
+    if(search === ""){
+        namesDiv.style.display = "none";
     }
 });
+
 //******************//
 //*  local storage *//
 //******************//
-
 //? Adds local storage
 btnSave.addEventListener('click', ()=>{
     if (switchOne){

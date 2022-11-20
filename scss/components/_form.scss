@@ -23,21 +23,28 @@
         height: 3em;
         box-shadow: 0 2px 2px black;
         width: 100%;
+        outline: none;
     }
-    .search-names {
-        background-color: darkblue;
-        height: 3rem;
-        font-size: larger;
-        a{
-            color: white;
-            list-style-type: none;
-            text-decoration: none;
-        }
-    }
+    // .search-names {
+    //     background-color: darkblue;
+    //     height: 3rem;
+    //     font-size: larger;
+    //     a{
+    //         color: white;
+    //         list-style-type: none;
+    //         text-decoration: none;
+    //     }
+    // }
     .widget-container{
         display: flex;
         flex-direction: column;
-        .form-field{
+        position: relative;
+        .names-list{
+            background-color: #ccc;
+            font-size: large;
+            
+        }
+        .textarea-field{
             height: 100px;
             margin: 1em 0 1em;
         }

@@ -1,6 +1,11 @@
 .traffic-header{
-    margin-top: 1em;
     grid-area: main;
+    margin-top: 1em;
+    @media(min-width:768px){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .traffic-nav{
         display: flex;
         list-style-type: none;

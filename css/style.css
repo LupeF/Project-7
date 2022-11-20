@@ -599,15 +599,19 @@ nav .flex-img a img {
 .social .social-container .stats {
   color: black;
   font-size: x-large;
-  padding-top: 8px;
-}
-.social .social-container .stats p {
   margin-top: 0;
 }
 
 .traffic-header {
-  margin-top: 1em;
   grid-area: main;
+  margin-top: 1em;
+}
+@media (min-width: 768px) {
+  .traffic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .traffic-header .traffic-nav {
   display: flex;
@@ -659,26 +663,21 @@ nav .flex-img a img {
   height: 3em;
   box-shadow: 0 2px 2px black;
   width: 100%;
-}
-.message .search-names,
-.settings .search-names {
-  background-color: darkblue;
-  height: 3rem;
-  font-size: larger;
-}
-.message .search-names a,
-.settings .search-names a {
-  color: white;
-  list-style-type: none;
-  text-decoration: none;
+  outline: none;
 }
 .message .widget-container,
 .settings .widget-container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
-.message .widget-container .form-field,
-.settings .widget-container .form-field {
+.message .widget-container .names-list,
+.settings .widget-container .names-list {
+  background-color: #ccc;
+  font-size: large;
+}
+.message .widget-container .textarea-field,
+.settings .widget-container .textarea-field {
   height: 100px;
   margin: 1em 0 1em;
 }

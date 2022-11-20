@@ -62,17 +62,13 @@
         .social-text p {
             margin-bottom: 0;
             @media(min-width:768px){
-                // margin-left: 2em;
                 grid-template-rows: 0px;
             }  
         }
         .stats{
             color: black ;
             font-size: x-large;
-            padding-top: 8px;
-            p{
-                margin-top: 0;
-            } 
+            margin-top: 0;
         }
     }
 }
