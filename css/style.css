@@ -676,6 +676,11 @@ nav .flex-img a img {
   background-color: #ccc;
   font-size: large;
 }
+.message .widget-container .names-list ul,
+.settings .widget-container .names-list ul {
+  padding-left: 0;
+  list-style-type: none;
+}
 .message .widget-container .textarea-field,
 .settings .widget-container .textarea-field {
   height: 100px;

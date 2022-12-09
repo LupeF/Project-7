@@ -364,24 +364,45 @@ send.addEventListener('click', ()=>{
 //* auto-complete function and eventListener*//
 //******************************************//
 //?creates a auto complete function
-userInput.addEventListener('keyup',(e)=>{
+const namesArray = ["Victoria Chambers","Dale Byrd","Dawn Wood", "Dan Oliver"];
+userInput.addEventListener('keyup', (e)=>{
     let search = e.target.value.toLowerCase();
-    const names = document.querySelectorAll('.members-text p');
-    for(let i=0; i<names.length; i++){ //Loops through array and stores in variable
-        let name = names[i].innerHTML.toLowerCase();
-        if(name.includes(search)){
-            namesDiv.style.display = "block";
-            namesDiv.innerHTML = `<p>${name}</p>`;
-        } 
+    let listNames = [];
+    for(let i=0; i < namesArray.length; i++){
+        const names = namesArray[i].toLowerCase();
+        if(search === ""){
+            namesDiv.textContent = '';
+        }else if(names.includes(search)){
+            listNames.push(names);
+            // namesDiv.innerHTML=` <ul>${names}</ul>`
+            namesDiv.innerHTML = `
+            <ul>
+            <li>${listNames}</li>
+            </ul>`;
+        }
     }
-    if(search === ""){
-        namesDiv.style.display = "none";
-    }
-});
+    namesDiv.style.cursor = 'pointer';
+})
+// userInput.addEventListener('keyup',(e)=>{
+//     // retrieves input value 
+//     let search = e.target.value.toLowerCase();
+//     // filters array, that includes input, storing it in variable
+//     const name = namesArray.filter(name => name.toLowerCase().includes(search));
+//     if(search === ""){
+//         namesDiv.textContent = '';
+//     } else {
+//         namesDiv.innerHTML =`
+//                      <ul>
+//                      <li>${name}</li>
+//                      </ul>`;
+//     }
+// });
 
-//******************//
+
+
+//******************/
 //*  local storage *//
-//******************//
+//******************/
 //? Adds local storage
 btnSave.addEventListener('click', ()=>{
     if (switchOne){
