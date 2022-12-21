@@ -24,9 +24,6 @@ const saveTimezone = document.getElementById('timezone');
 const btnSave = document.querySelector('.button-primary');
 const btnCancel = document.querySelector('.button-disabled');
 
-
-
-
 //*notification drop down */
 document.getElementById('notifications').addEventListener('click',(e) => {
     if(bellDiv.style.opacity == 1){
@@ -45,7 +42,6 @@ document.getElementById('notifications').addEventListener('click',(e) => {
     }
     
 });
-
 
 //********************//
 //*functions for Linegraph// 
@@ -367,38 +363,17 @@ send.addEventListener('click', ()=>{
 const namesArray = ["Victoria Chambers","Dale Byrd","Dawn Wood", "Dan Oliver"];
 userInput.addEventListener('keyup', (e)=>{
     let search = e.target.value.toLowerCase();
-    let listNames = [];
-    for(let i=0; i < namesArray.length; i++){
-        const names = namesArray[i].toLowerCase();
+    let ul = document.createElement('ul')
+    namesArray.forEach(name => {
         if(search === ""){
-            namesDiv.textContent = '';
-        }else if(names.includes(search)){
-            listNames.push(names);
-            // namesDiv.innerHTML=` <ul>${names}</ul>`
-            namesDiv.innerHTML = `
-            <ul>
-            <li>${listNames}</li>
-            </ul>`;
+            namesDiv.style.display = 'none';
+        }else if(name.toLowerCase().includes(search)){
+            namesDiv.style.display ='block';
+            ul.innerHTML +=`<li>${name}</li>`;
+            namesDiv.innerHTML=`<ul>${ul.innerHTML}</ul>`; 
         }
-    }
-    namesDiv.style.cursor = 'pointer';
-})
-// userInput.addEventListener('keyup',(e)=>{
-//     // retrieves input value 
-//     let search = e.target.value.toLowerCase();
-//     // filters array, that includes input, storing it in variable
-//     const name = namesArray.filter(name => name.toLowerCase().includes(search));
-//     if(search === ""){
-//         namesDiv.textContent = '';
-//     } else {
-//         namesDiv.innerHTML =`
-//                      <ul>
-//                      <li>${name}</li>
-//                      </ul>`;
-//     }
-// });
-
-
+    })
+});
 
 //******************/
 //*  local storage *//

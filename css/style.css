@@ -676,10 +676,11 @@ nav .flex-img a img {
   background-color: #ccc;
   font-size: large;
 }
-.message .widget-container .names-list ul,
-.settings .widget-container .names-list ul {
-  padding-left: 0;
+.message .widget-container .names-list li,
+.settings .widget-container .names-list li {
+  padding: 0.5em;
   list-style-type: none;
+  cursor: pointer;
 }
 .message .widget-container .textarea-field,
 .settings .widget-container .textarea-field {

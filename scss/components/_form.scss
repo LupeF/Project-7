@@ -42,9 +42,10 @@
         .names-list{
             background-color: #ccc;
             font-size: large;
-            ul{
-                padding-left: 0;
+            li{
+                padding: .5em;
                 list-style-type: none;
+                cursor: pointer;
             }
            
         }
