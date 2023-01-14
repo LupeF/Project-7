@@ -1,24 +1,25 @@
-//? variables for notification bell
+//* variables for notification bell
 const bellDiv = document.getElementById('bellMenu');
-//?variables for graphs//
+//*variables for graphs//
 const magnaGlass = document.getElementById('magnifying-g');
 const alertbanner = document.getElementById('alert');
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
 const mobileCanvas = document.getElementById('mobile-users');
-//?variables for linegraph//
+//*variables for linegraph//
 let hourly = document.getElementById('hourly');
 let daily = document.getElementById('daily');
 let weekly = document.getElementById('weekly');
 let monthly = document.getElementById('monthly');
-//? variable for auto-complete //
+//* variable for auto-complete //
 let namesDiv = document.querySelector('.names-list');
-//? variables for messaage form //
+//* variables for messaage form //
 const div = document.getElementById('searchDiv');
 const userInput = document.getElementById('userField');
 const message = document.getElementById('messageField');
 const send = document.getElementById('send');
-//? variables for local storage//
+const delivered = document.getElementById('message-delivered');
+//* variables for local storage//
 const saveSetting = document.getElementById('settings');
 const saveTimezone = document.getElementById('timezone');
 const btnSave = document.querySelector('.button-primary');
@@ -363,16 +364,17 @@ send.addEventListener('click', ()=>{
 const namesArray = ["Victoria Chambers","Dale Byrd","Dawn Wood", "Dan Oliver"];
 userInput.addEventListener('keyup', (e)=>{
     let search = e.target.value.toLowerCase();
-    let ul = document.createElement('ul')
+    let li = document.createElement('li')
     namesArray.forEach(name => {
-        if(search === ""){
+        if(search === "" ){
+            namesDiv.innerHTML = "";
             namesDiv.style.display = 'none';
         }else if(name.toLowerCase().includes(search)){
             namesDiv.style.display ='block';
-            ul.innerHTML +=`<li>${name}</li>`;
-            namesDiv.innerHTML=`<ul>${ul.innerHTML}</ul>`; 
+            li.innerHTML +=`<li>${name}</li>`;
+            namesDiv.innerHTML=`<ul>${li.innerHTML}</ul>`; 
         }
-    })
+    }) 
 });
 
 //******************/

@@ -673,14 +673,28 @@ nav .flex-img a img {
 }
 .message .widget-container .names-list,
 .settings .widget-container .names-list {
-  background-color: #ccc;
+  background-color: white;
   font-size: large;
+  position: absolute;
+  border: solid 3px lightgray;
+  border-radius: 5px;
+  display: none;
+  z-index: 1;
 }
-.message .widget-container .names-list li,
-.settings .widget-container .names-list li {
+.message .widget-container .names-list ul,
+.settings .widget-container .names-list ul {
+  margin: 0;
+  padding-left: 0;
+}
+.message .widget-container .names-list ul li,
+.settings .widget-container .names-list ul li {
   padding: 0.5em;
   list-style-type: none;
   cursor: pointer;
+}
+.message .widget-container .names-list ul li:hover,
+.settings .widget-container .names-list ul li:hover {
+  background-color: #efe9e9;
 }
 .message .widget-container .textarea-field,
 .settings .widget-container .textarea-field {
@@ -806,6 +820,12 @@ nav .flex-img a img {
   width: 50%;
   color: white;
   background-color: #bbbbbb;
+}
+
+.delivered-banner {
+  background-color: #7477bf;
+  width: 100%;
+  color: white;
 }
 
 canvas {
