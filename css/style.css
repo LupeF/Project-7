@@ -611,6 +611,7 @@ nav .flex-img a img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 1.5em;
   }
 }
 .traffic-header .traffic-nav {
@@ -800,32 +801,29 @@ nav .flex-img a img {
   }
 }
 
+.delivered-styles {
+  background-color: lightgreen;
+  color: white;
+  width: 100%;
+}
+
 .switch-light {
   width: 50%;
 }
 
-.settings-button {
+.button-container {
   display: flex;
   margin-top: 1em;
 }
-.settings-button .button-primary {
+.button-container .button {
   height: 3em;
   width: 50%;
   color: white;
   background-color: #7477bf;
 }
-.settings-button .button-disabled {
+.button-container .button + .button {
   margin-left: 10px;
-  height: 3em;
-  width: 50%;
-  color: white;
   background-color: #bbbbbb;
-}
-
-.delivered-banner {
-  background-color: #7477bf;
-  width: 100%;
-  color: white;
 }
 
 canvas {

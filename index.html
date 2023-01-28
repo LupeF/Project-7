@@ -31,17 +31,17 @@
    </header>
     <nav>
         <div class="flex-img">
-        <a href="">
-            <img src="icons/icon-dashboard.svg" alt="#">
+        <a href="#traffic">
+            <img src="icons/icon-dashboard.svg" alt="Traffic Icon">
         </a>
-        <a href="">
-            <img src="icons/icon-members.svg" alt="#">
+        <a href="#members">
+            <img src="icons/icon-members.svg" alt="Memebers Icon">
         </a>
-        <a href="">
-            <img src="icons/icon-visits.svg" alt="#">
+        <a href="#socials">
+            <img src="icons/icon-visits.svg" alt="Social media Icon">
         </a>
-        <a href="">
-            <img src="icons/icon-settings.svg" alt="#">
+        <a href="#settings">
+            <img src="icons/icon-settings.svg" alt="Settings Icon">
         </a> 
         </div>   
     </nav>
@@ -56,7 +56,7 @@
                 <!-- JS will inset alert here -->
             </div>
         </section>
-        <section class="traffic">
+        <section class="traffic" id="traffic">
             <div class="traffic-header">
                 <h5>TRAFFIC</h5>
                 <div>
@@ -90,7 +90,7 @@
             </div>  
         </section>
             <!-- social media -->
-        <section class="social">
+        <section class="social" id="socials">
             <h5>SOCIAL STATS</h5>
             <div class="social-container twitter">
                 <div class="social-image">
@@ -130,7 +130,7 @@
                 </div>
             </div>
         </section>
-        <section class="members">
+        <section class="members" id="members">
             <h5>NEW MEMBERS</h5>
             <div class="members-container">
                 <img src="images/member-1.jpg" alt="Picture of a new member" class="profile-image">
@@ -212,17 +212,17 @@
                 <button class="button-primary" id="send">Send</button>
             </form>
         </section>
-        <section class="settings">
+        <section class="settings" >
             <!-- custom CSS toggle code  -->
             <h3>SETTINGS</h3>
             <div class="toggle-container">
                 <p>Send Email Notifications</p>
-                <input type="checkbox">
+                <input type="checkbox" id="email">
             </div>
             <!-- custom CSS toggle code  -->
             <div class="toggle-container">
                 <p>Set Profile to Public</p>
-                <input type="checkbox">
+                <input type="checkbox" id="profile">
             </div>
             <div class="select-container">
                 <select class="select-input" id="timezone">
@@ -233,9 +233,9 @@
                 </select>
                 <i class="triangle fa-2xl fa-sharp fa-solid fa-caret-down"></i>
             </div>
-            <div class="settings-button">
-                <button class="button-primary" id="saveBtn">SAVE</button>
-                <button class="button-disabled">CANCEL</button>
+            <div class="button-container">
+                <button class="button" id="saveBtn">SAVE</button>
+                <button class="button" id="cancelBtn">CANCEL</button>
             </div>
         </section>
     </main>

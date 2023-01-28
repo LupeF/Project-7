@@ -20,10 +20,11 @@ const message = document.getElementById('messageField');
 const send = document.getElementById('send');
 const delivered = document.getElementById('message-delivered');
 //* variables for local storage//
-const saveSetting = document.getElementById('settings');
+const emailNotification = document.getElementById('email');
+const publicProfile = document.getElementById('profile');
 const saveTimezone = document.getElementById('timezone');
-const btnSave = document.querySelector('.button-primary');
-const btnCancel = document.querySelector('.button-disabled');
+const btnSave = document.getElementById('saveBtn');
+const btnCancel = document.getElementById('cancelBtn');
 
 //*notification drop down */
 document.getElementById('notifications').addEventListener('click',(e) => {
@@ -33,9 +34,9 @@ document.getElementById('notifications').addEventListener('click',(e) => {
     bellDiv.innerHTML = `
     <div class="menuList">
         <ul>
-        <a href=""><li> New Messages </li></a>
-        <a href=""><li> Viewed </li></a>
-        <a href=""><li> Sent </li></a>
+        <a href="#"><li> New Messages </li></a>
+        <a href="#"><li> Viewed </li></a>
+        <a href="#"><li> Sent </li></a>
         </ul>
     </div>
     `;
@@ -345,15 +346,20 @@ let mobileChart = new Chart(mobileCanvas, {
 //********************************************//
 //*EventListener Ensures Fields are filled out
 //******************************************//
-send.addEventListener('click', ()=>{
+send.addEventListener('click', (e)=>{
     if(userInput.value === "" && message.value === ""){
+        e.preventDefault();
         alert("Search field and Message field are empty"); //!alert
     }else if(userInput.value === ""){
+        e.preventDefault();
         alert("Input field empty"); //!alert
     }else if(message.value === ""){
+        e.preventDefault();
         alert("Message field Is empty"); //!alert
     }else{
         alert(`Message was Successfully sent to ${userInput.value}`); //!alert
+        userInput.value = "";
+        message.value = "";
     }
 });
 
@@ -361,38 +367,57 @@ send.addEventListener('click', ()=>{
 //* auto-complete function and eventListener*//
 //******************************************//
 //?creates a auto complete function
-const namesArray = ["Victoria Chambers","Dale Byrd","Dawn Wood", "Dan Oliver"];
-userInput.addEventListener('keyup', (e)=>{
+const namesArray = [
+"Victoria Chambers",
+"Dale Byrd",
+"Dawn Wood",
+"Dan Oliver"
+];
+userInput.addEventListener('keyup', (e) =>{
+    namesDiv.innerHTML= "";
+    namesDiv.style.display = "block";
+    const ul = document.createElement("ul");
+    namesDiv.append(ul);
     let search = e.target.value.toLowerCase();
-    let li = document.createElement('li')
-    namesArray.forEach(name => {
-        if(search === "" ){
-            namesDiv.innerHTML = "";
-            namesDiv.style.display = 'none';
-        }else if(name.toLowerCase().includes(search)){
-            namesDiv.style.display ='block';
-            li.innerHTML +=`<li>${name}</li>`;
-            namesDiv.innerHTML=`<ul>${li.innerHTML}</ul>`; 
-        }
-    }) 
-});
+    if(search !== ""){
+        namesArray.forEach(name =>{
+            if(name.toLowerCase().includes(search)){
+                const li = document.createElement("li")
+                li.textContent = name;
+                ul.append(li);
+                li.addEventListener('click', (e) =>{
+                    userInput.value = li.textContent;
+                    namesDiv.style.display = "none";
+                });
+            }
+        })
+    }else{
+        namesDiv.style.display = "none";
+    }
+})
 
 //******************/
 //*  local storage *//
 //******************/
 //? Adds local storage
 btnSave.addEventListener('click', ()=>{
-    if (switchOne){
-        localStorage.setItem('switch-one', switchOne.checked);
-    } if (switchTwo){
-        localStorage.setItem('switch-two', switchTwo.checked);
-    } if (saveTimezone){
-        localStorage.setItem('tzone', saveTimezone.value);
-    }    
-});
+    if(emailNotification.checked){
+        localStorage.setItem('switchOne', emailNotification.value);
+    } 
+    if(publicProfile.checked === true){
+        localStorage.setItem('switchTwo', publicProfile.value);
+    } 
+    if(saveTimezone.value){
+        localStorage.setItem('Tzone', saveTimezone.value);
+    } 
+    
+})
+// function storageValues (input1,input2,input3){
+//     const valueOne = localStorage.getItem('switchOne');
+// }
 //? removes local storage
 btnCancel.addEventListener('click', (e)=>{
-    localStorage.removeItem('switch-one');
-    localStorage.removeItem('switch-two');
-    localStorage.removeItem('tzone');
+    localStorage.removeItem('switchOne');
+    localStorage.removeItem('switchTwo');
+    localStorage.removeItem('Tzone');
 });

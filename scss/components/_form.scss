@@ -146,26 +146,18 @@
 .switch-light{
     width: 50%;  
 }
-.settings-button{
+.button-container{
     display: flex;
     margin-top:  1em;
-    .button-primary{
+    .button{
         height: 3em;
         width:50%;
         color:white;
-        background-color: #7477bf;   
-    }
-    .button-disabled{
-        margin-left: 10px;
-        height: 3em;
-        width: 50%;
-        color: white;
-        background-color: rgb(187, 187, 187);
+        background-color: #7477bf;
+        & + .button{
+            margin-left: 10px;
+            background-color: rgb(187, 187, 187);
+        }   
     }
 }
 
-.delivered-banner{
-    background-color: #7477bf;
-    width: 100%;
-    color: white;
-}
