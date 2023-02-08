@@ -62,15 +62,10 @@ function removeData(chart) {
     });
     chart.update();
 };
-//*add search functionality//
-// magnaGlass.addEventListener('click', (e)=>{
-
-// })
 
 //********************//
 //*creates Alertbanner and inserts in element// 
 //*********************//
-
 alertbanner.innerHTML = `
 <div class="alert-banner">
 <p> <strong> Alert: </strong> You have <strong>6</strong> overdue tasks to complete!</p>
@@ -241,7 +236,7 @@ let monthlyTraff = {
     ]
 };
 //*****************//
-//*event listeners for line-graph//
+//* line-graph//
 //*****************//
 
 hourly.addEventListener('click', (e) =>{
@@ -344,7 +339,7 @@ let mobileChart = new Chart(mobileCanvas, {
 });
 
 //********************************************//
-//*EventListener Ensures Fields are filled out
+//* Ensures Message Fields are filled out
 //******************************************//
 send.addEventListener('click', (e)=>{
     if(userInput.value === "" && message.value === ""){
@@ -364,7 +359,7 @@ send.addEventListener('click', (e)=>{
 });
 
 //********************************************//
-//* auto-complete function and eventListener*//
+//* auto-complete function *//
 //******************************************//
 //?creates a auto complete function
 const namesArray = [
@@ -392,6 +387,7 @@ userInput.addEventListener('keyup', (e) =>{
             }
         })
     }else{
+        namesDiv.textContent = "";
         namesDiv.style.display = "none";
     }
 })
@@ -404,20 +400,38 @@ btnSave.addEventListener('click', ()=>{
     if(emailNotification.checked){
         localStorage.setItem('switchOne', emailNotification.value);
     } 
-    if(publicProfile.checked === true){
+    if(publicProfile.checked){
         localStorage.setItem('switchTwo', publicProfile.value);
     } 
     if(saveTimezone.value){
         localStorage.setItem('Tzone', saveTimezone.value);
     } 
-    
 })
-// function storageValues (input1,input2,input3){
-//     const valueOne = localStorage.getItem('switchOne');
-// }
+
+
 //? removes local storage
-btnCancel.addEventListener('click', (e)=>{
+btnCancel.addEventListener('click', () =>{
     localStorage.removeItem('switchOne');
     localStorage.removeItem('switchTwo');
-    localStorage.removeItem('Tzone');
+    localStorage.removeItem('Tzone' );
 });
+
+//? Retrieves local storage
+const settingsONE = localStorage.getItem('switchOne');
+const settingsTwo = localStorage.getItem('switchTwo');
+const settingsThree = localStorage.getItem('Tzone');
+
+//? Checks for local Storage and displays saved settings
+function display (){
+    if(emailNotification.value === settingsONE){
+        emailNotification.checked = true;
+    }
+    if(publicProfile.value === settingsTwo){
+        publicProfile.checked = true;
+    }
+    if(settingsThree.value !== ""){
+        saveTimezone.value = settingsThree;
+    }
+    return;
+}
+display();
